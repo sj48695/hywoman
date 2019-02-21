@@ -21,3 +21,8 @@
 0:0:0:0:0:0:0:1 - - [21/Feb/2019:22:22:18 +0900] "GET /capstone/signD/module/images/stopwatch.png HTTP/1.1" 200 7619
 0:0:0:0:0:0:0:1 - - [21/Feb/2019:22:22:18 +0900] "GET /capstone/signD/module/images/new.png HTTP/1.1" 200 3108
 0:0:0:0:0:0:0:1 - - [21/Feb/2019:22:22:18 +0900] "GET /capstone/signD/module/images/+2.png HTTP/1.1" 200 9098
+127.0.0.1 - - [21/Feb/2019:23:02:36 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [21/Feb/2019:23:02:38 +0900] "GET /capstone/signD/main.jsp HTTP/1.1" 500 17364
+0:0:0:0:0:0:0:1 - - [21/Feb/2019:23:04:50 +0900] "GET /capstone/signD/main.jsp HTTP/1.1" 500 17364
+127.0.0.1 - - [21/Feb/2019:23:05:21 +0900] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [21/Feb/2019:23:05:23 +0900] "GET /capstone/signD/main.jsp HTTP/1.1" 500 17364

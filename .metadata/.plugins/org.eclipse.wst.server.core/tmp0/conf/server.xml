@@ -149,7 +149,11 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\sj486\capstone\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\sj486\capstone\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\capstone" path="/capstone" reloadable="true" source="org.eclipse.jst.jee.server:capstone"/></Host>
+	      <Context docBase="C:\Users\sj486\hywoman\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\sj486\hywoman\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\capstone" path="/capstone" reloadable="true" source="org.eclipse.jst.jee.server:capstone">
+		      <Resource auth="Container" driverClassName="com.mysql.jdbc.Driver" maxWait="5000" name="jdbc/signd" password="1234" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/2018a5" username="aban"/>
+
+	      </Context>
+      </Host>
     </Engine>
   </Service>
 </Server>

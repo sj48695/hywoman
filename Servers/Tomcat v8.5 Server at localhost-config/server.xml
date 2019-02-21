@@ -150,15 +150,15 @@
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
 	      <Context docBase="capstone" path="/capstone" reloadable="true" source="org.eclipse.jst.jee.server:capstone">
-	      <Resource name="jdbc/signd"
-           auth="Container"
-           type="javax.sql.DataSource"
-           driverClassName="com.mysql.jdbc.Driver" 
-           username="aban"
-           password="1234"
-           url="jdbc:mysql://localhost:3306/aban"
-           maxWait="5000"       
- />
+		      <Resource name="jdbc/signd"
+		           auth="Container"
+		           type="javax.sql.DataSource"
+		           driverClassName="com.mysql.jdbc.Driver" 
+		           username="aban"
+		           password="1234"
+		           url="jdbc:mysql://localhost:3306/2018a5"
+		           maxWait="5000"       
+		 		/>
 
 	      </Context>
       </Host>

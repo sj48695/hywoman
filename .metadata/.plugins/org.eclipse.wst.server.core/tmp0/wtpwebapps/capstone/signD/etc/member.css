@@ -1,0 +1,246 @@
+@charset "EUC-KR";
+
+.mbgi {
+	background-image: url(../module/images1/mo.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+	background-position: 0% 50%;
+	min-width: 576px;
+	background-color: #e9ecef;
+	border-radius: .3rem;
+}
+
+/* ------------------------
+		insertMember1(이용약관페이지)
+--------------------------- */
+.terms_bx {
+	display: block;
+	padding-top: 30px;
+}
+
+.terms_box {
+	position: relative;
+	overflow: auto;
+	height: 200px;
+	margin-top: 8px;
+	padding: 12px;
+	border: 1px solid #dadada;
+	background: #fff;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	scrollbar-base-color: #d9d9d9;
+	scrollbar-arrow-color: #8e8e8e;
+	scrollbar-3dlight-color: #d9d9d9;
+	scrollbar-darkshadow-color: #d9d9d9;
+	scrollbar-face-color: #d9d9d9;
+	scrollbar-highlight-color: #d9d9d9;
+	scrollbar-shadow-color: #d9d9d9;
+	scrollbar-track-color: #f2f2f2;
+	-webkit-overflow-scrolling: touch;
+}
+
+.input_chk {
+	position: relative;
+	display: block;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.article__text__list {
+	position: relative;
+	padding-left: 20px;
+}
+
+.article__text__list:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 7px;
+	left: 8px;
+	width: 2px;
+	height: 2px;
+	background: #8e8e8e;
+}
+
+.article__text+.article__text {
+	margin-top: 8px;
+}
+
+.chk_all_txt {
+	text-decoration: underline;
+}
+
+.insertsigns {
+	border-radius: 5px;
+	border: 2px solid #ccc;
+	background-color: #ffffff;
+	/* min-height: 700px;*/
+	padding: 30px 20px 30px 20px;
+	/* margin: 50px; */
+}
+
+/*----------------------------
+		insertMemeber2.jsp	
+---------------------------*/
+.uid {
+	padding-top: 15px;
+	vertical-align: top;
+}
+
+.inputtext {
+	width: 379px;
+	height: 38px;
+	padding: 0 40px 0 11px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	border-width: 1px;
+	border-color: #a3a4a5 #dbdbdb #dbdbdb #919293;
+	border-style: solid;
+	line-height: 36px;
+	font-family: "돋움", Dotum;
+	vertical-align: middle;
+}
+
+.footerbottom {
+	margin-bottom: 80px;
+}
+
+.logos {
+	width: 50%;
+	height: 50%;
+}
+
+.prog {
+	display: -ms-flexbox;
+	display: flex;
+	height: 1rem;
+	background-color: #EDEDED;
+	border-radius: .25rem;
+}
+
+.ull {
+	list-style: none;
+	padding: 0px;
+}
+
+.lii {
+	padding: 10px 0px 10px 0px;
+	border-bottom: 1px solid #ccc;
+}
+
+.margint {
+	margin-top: 15px;
+}
+
+.margintt {
+	margin-top: 30px;
+}
+
+.marginb {
+	margin-bottom: 15px;
+}
+
+.fontb {
+	font-weight: bold;
+}
+
+.priceText {
+	font-weight: bold;
+}
+
+.paddingz {
+	padding: 1%;
+}
+
+.marginr {
+	margin-right: 10px;
+}
+
+.paddinglz {
+	padding-left: 0px;
+}
+
+.listnon {
+	list-style: none;
+	padding-left: 0px;
+	margin: 20px;
+}
+
+
+/*---------------------
+		insertMember2
+----------------------*/
+
+.item_info {
+	position: relative;
+	padding: 7px 0;
+}
+
+.bs1 {
+	border-collapse: separate;
+	border-spacing: 0 25px;
+	/* border-spacing: 200px; */
+}
+
+.insertsignd {
+	background-color: #f7f7f7;
+	/* 	background-color: #e5474b; */
+	/* color: #f2a3a5; */
+	padding: 4em 0 2em 0;
+	/* background: #e5474b; */
+	min-height: 700px;
+	padding: 60px 80px 40px 80px;
+	margin: 50px;
+}
+
+.insertsignn {
+	border-top: 3px solid #ff9557;
+	background-color: #f7f7f7;
+	/* 	background-color: #e5474b; */
+	/* color: #f2a3a5; */
+	padding: 4em 0 2em 0;
+	/* background: #e5474b; */
+	min-height: 700px;
+	/* padding: 60px 80px 40px 80px; */
+	/* margin: 50px 200px 50px 200px; */
+}
+
+.isttxt {
+	color: #ffffff;
+}
+
+/* .istinput {
+	background: none;
+	border-color: #ffffff;
+	color: #ffffff;
+}
+ */
+.istbox {
+	padding: 0% 5% 0% 5%;
+	height: 100%;
+}
+
+.pdz {
+	padding: 0px;
+}
+
+.pd10 {
+	padding: 20px;
+}
+
+.pds1 {
+	padding: 0% 1% 0% 1%;
+}
+
+.nb {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px #fff;
+	color: #ffffff !important;
+}
+
+.r {
+	border-radius: 50%;
+}

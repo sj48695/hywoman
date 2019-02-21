@@ -1,0 +1,164 @@
+@CHARSET "UTF-8";
+
+body {
+	margin: 0;
+}
+
+html, body {
+   font-family: 'Nanum Gothic', sans-serif;
+   font-size: 14px; 
+   color: #495161; 
+}
+
+p{
+	font-weight: 700;
+}
+
+/* -------------------
+	manubar
+----------------------- */
+
+.main-menu-bar {
+	position: relative;
+	background: rgba(0, 0, 0, 0.5);
+	/* display: inline-block; */
+	width: 100%;
+/* 	height: 53px; *//*collapse가 show이면 없어져야함 */
+	z-index: 999;
+}
+
+@media (max-width: 991.98px){
+	.navbar-expand-lg>.container, .navbar-expand-lg>.container-fluid {
+	     padding-right: 15px; 
+	    padding-left: 15px; 
+	}
+}
+
+.navbar {
+	padding: 0;
+}
+
+.zeta-menu {
+	margin: 0;
+	padding: 0;
+}
+
+.zeta-menu li {
+	float: left;
+	list-style: none;
+	position: relative;
+}
+
+.zeta-menu li:hover {
+	background: white;
+}
+
+.zeta-menu li:hover>a {
+	color: #495161;
+} /*메뉴바에 마우스올려졌을 때 글자색 #B49F8E;*/
+.zeta-menu li:hover>a>i {
+	color: #B49F8E;
+} /*메뉴바에 마우스올려졌을 때 글자색*/
+.zeta-menu a {
+	color: white; /* 메뉴바 글자색 */
+	display: block;
+	padding: 15px 20px;
+	text-decoration: none;
+}
+
+.zeta-menu ul {
+	background: white;
+	border: 1px solid; /* silver */
+	display: none;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	width: 180px;
+	z-index: 999;
+	/* position 속성에 의해 위치가 겹칠 때, 어떤 요소를 위에 위치시킬건지 정하는 레이어 속성 */
+}
+
+.zeta-menu ul li {
+	float: none;
+}
+
+.zeta-menu ul li:hover {
+	background: #ddd;
+}
+
+.zeta-menu ul li:hover a {
+	color: black;
+}
+
+.zeta-menu ul a {
+	color: black;
+}
+
+.zeta-menu ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.menu_link {
+	padding: 7px 20px;
+	color: #ffffff;
+}
+
+.menu_link li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.menu_link li a:hover {
+	text-decoration: none;
+	color: #A54D4D;
+}
+/* .zeta-menu ul ul li {float:left; margin-right:10px;} */
+#fixed-menu {
+	position: fixed;
+}
+
+.change-menubar {
+	position: relative;
+	background: #fff;
+	display: inline-block;
+	width: 100%;
+	/* height: 55px; */
+	z-index: 999;
+	box-shadow: 0px 5px 5px -2px rgba(25, 25, 25, 0.15);
+	color: #495161;
+	/* border-bottom: solid 0.3px #495161; */
+}
+
+.change-zeta-menu a {
+	color: white; /* 메뉴바 글자색 */
+	display: block;
+	padding: 15px 20px;
+	text-decoration: none;
+}
+
+
+/* 영현언니 */
+.btnOr {
+	color: #fff;
+	background: #ff9557;
+	border: 1px solid #ff9557;
+	width: 190px;
+}
+
+.btnOr:link, .btnOr:active, .btnOr:visited {
+	color: #fff;
+}
+
+.btnOrO {
+    color: #fff;
+    background: #ff9557;
+    border: 1px solid #ff9557;
+}
+
+/* pagenation */
+.pagination .disabled {
+	pointer-events: none;
+	color: lightgray;
+}

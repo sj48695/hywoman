@@ -1,0 +1,93 @@
+@charset "EUC-KR";
+
+/*---------------------------
+      mypage
+-----------------------------*/
+#myTab a {
+	/* color:#B49F8E; */
+	color: darkgray;
+}
+
+#myTab .nav-item.show .nav-link, #myTab .nav-link.active {
+	color: #495161;
+	font-weight: bold;
+}
+
+.my_nav_wrap {
+	display: block;
+	box-sizing: border-box;
+	/* border-bottom: 1px solid #dedfe1; */
+	background-color: #fff;
+	width: 100%;
+}
+
+.my_nav li:hover:after, .my_nav a.active:after {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	content: " ";
+	background: #A54D4D;
+}
+
+.my_nav a.active {
+	font-weight: bold;
+}
+
+.my_nav li {
+	line-height: 26px;
+	cursor: pointer;
+}
+
+.my_nav li a {
+	color: #000000;
+	font-size: 16px;
+	border: none;
+}
+
+.my_nav li a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+
+.my_nav li a:hover {
+	text-decoration: none;
+	color: #000000;
+}
+
+.login_body {
+	padding-top: 140px;
+	padding-bottom: 170px;
+	padding-left: 18%;
+	padding-right: 18%;
+}
+
+.middle_box {
+	padding: 26px 0 26px;
+	text-align: center;
+}
+
+#myTab .nav-item {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.fixed {
+	table-layout: fixed;
+}
+
+.fixed .title {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.fa-star {
+	color: #FFCD12;
+}
+
+.pointer {
+	cursor: pointer;
+}

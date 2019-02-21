@@ -1,0 +1,32 @@
+{
+"results":[
+	{
+		"citycode": "11",
+		"cityname":"서울특별시",
+		"node": [
+		{
+			"nodeid":"NAT010000",
+			"nodename":"서울"
+		},
+		{
+			"nodeid":"NAT010091",
+			"nodename":"영등포"
+		}
+		]
+	},
+	{
+		"citycode": "21",
+		"cityname":"부산광역시",
+		"node": [
+		{
+			"nodeid":"NAT014281",
+			"nodename":"구포"
+		},
+		{
+			"nodeid":"NAT014445",
+			"nodename":"부산"
+		}
+		]
+	}
+	]
+}

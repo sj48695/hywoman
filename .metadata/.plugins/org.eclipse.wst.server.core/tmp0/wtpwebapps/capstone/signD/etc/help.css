@@ -1,0 +1,51 @@
+@charset "EUC-KR";
+
+.bgi4 {
+	background-image: url(../module/images1/mone2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+	background-position: 0% 50%;
+	min-width: 576px;
+	background-color: #e9ecef;
+	border-radius: .3rem;
+}
+
+
+/* derule.jsp */
+
+.d2_content_box {
+    width: 1024px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.box_content {
+	padding: 30px 95px 30px 100px;
+}
+
+.box {
+	padding: 20px;
+	padding-left: 10px;
+	float: left;
+	width: 340px;
+}
+
+.d2_content_box {
+    width: 1200px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.box_content {
+   padding:25px 95px 50px 90px;
+}
+
+.helpbgi{
+	background-image: url(../module/images1/help1.jpg);
+   width: 100%;
+   background-position: 0% 50%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
+}

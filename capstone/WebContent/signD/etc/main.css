@@ -1,0 +1,303 @@
+@charset "EUC-KR";
+
+/*---------------------------
+   메인 이용방법 스타일
+-----------------------------*/
+#mainmenu {
+   padding-top: 80px;
+   padding-bottom: 120px;
+}
+.img-responsive {
+   display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+#mainmenu small {
+   color: #f0f0f0;
+   font-size: 13px;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+#mainmenu .mainmenu-thumb {
+     position: relative;
+     padding: 0;
+     margin-top: 32px;
+}
+
+#mainmenu .mainmenu-thumb .mainmenu-overlay {
+     position: absolute;
+     background: #222;
+     color: #ffffff;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100%;
+     text-align: center;
+     vertical-align: top;
+     opacity: 0;
+     transition: all 0.4s ease-in-out;
+}
+
+#mainmenu .mainmenu-item {
+    position: absolute;
+    top:50%;
+    left: 50%;
+    -webkit-transform:translate(-50%,-50%);
+    -ms-transform:translate(-50%,-50%);
+    transform:translate(-50%,-50%);
+}
+
+#mainmenu .mainmenu-thumb:hover .mainmenu-overlay {
+     opacity: 0.9;
+}
+
+#mainmenu .text-center {
+     padding-top: 62px;
+}
+
+/*-------------------------------------
+         진행중인 콘테스트
+---------------------------------------*/
+.top_contest {
+   padding: 50px 0 30px 0;
+}
+.top_contest_font {
+   font-size: 24px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #ccc;
+   margin: 0 auto;
+   width: 420px;
+   text-align:center;
+}
+
+
+
+.contest_content {
+   margin: 40px 0;
+}/* 
+.contest_wrap {
+   display: inline-block;
+    width: 410px;   원래 460px;
+    margin: 0 10px;
+    vertical-align: top;
+} */
+.contest_category {
+   text-align: center;
+   margin-bottom: 20px;
+    font-size: 18px;
+}
+.contest_item {
+   background-color: white;
+    box-shadow: 1px 1px 2px #CEC6C6;
+    border-radius: 2px;
+   /*  width: 410px;  */  /* 원래 490px; */
+    height: 50px;
+    line-height: 50px;
+    margin-bottom: 8px;
+    color: #495161;
+    font-size: 13px;
+    overflow: hidden;
+    cursor:pointer;
+}
+.contest_item_content {
+   display: inline-block;
+  /*   margin-right: 5px; */
+  /*   overflow: hidden; */
+}
+/*-------------------------------------
+         디자이너 배너
+---------------------------------------*/
+.top_designer {
+   padding: 50px 0 30px 0;
+   text-align: center;
+}
+.top_designer_font {
+	font-size: 24px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #ccc;
+	margin: 0 auto;
+	width: 420px;
+}
+
+.designer_img {
+	width: 100px;
+	height: 100px;
+	object-fit: cover; /* 내용이 종횡비를 유지하면서 정의된 너비와 높이를 가득 채울때까지 확대된다. */
+	border-radius: 50%;
+	/* position: relative; */
+	display: block;
+	margin: 0em auto 2em auto;
+	"
+}
+
+/*---------------------------------
+         클라이언트 로고
+------------------------------------*/
+.client_box {
+   padding: 50px 0 80px;
+   text-align: center;
+}
+
+.clientlogo {
+    display: inline-block;
+    width: 200px;
+    margin: 25px 0;
+}
+
+.clientlogo_box {
+   padding-top: 20px;
+}
+
+.client_font {
+   font-size: 24px;
+   padding-bottom: 20px;
+   border-bottom: 1px solid #ccc;
+   margin: 0 auto;
+   width: 420px;
+}
+
+/*---------------------------
+      메인 footer
+-----------------------------*/
+.main_footer {
+   background-color: #1b1b1f;
+   color: #ffffff;
+}
+
+.main_sector {
+   padding: 50px 0 25px 0;
+   /* width: auto; */
+   margin: auto;
+}
+
+.ft_top {
+   padding-bottom: 40px;
+}
+
+.ft_page_sub {
+   width: 115px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.ft_page_rows {
+   padding-bottom: 8px;
+}
+
+.ft_inline {
+   display:inline-block;
+}
+
+.ft_inline ul li a{
+   text-decoration:none;
+   color: #fff;
+}
+
+.ft_inline ul li a:visited{
+   text-decoration:none;
+   color: #fff;
+}
+
+.ft_inline ul li a:active {
+  text-decoration:none;
+  color: #fff;
+}
+ 
+.ft_inline ul li a:hover {
+  text-decoration:none;
+  color: #A54D4D;
+}
+
+.ft_ul {
+   list-style-type:none;
+   margin:-3px;
+   padding:0;
+}
+
+.ft_li {
+   float:left;
+   padding: 0 9px;
+}
+
+.ft_bottom {
+   padding-top: 15px;
+}
+
+.ft_right {
+   float:right;
+   
+}
+
+.ft_tel {
+   position: relative;
+   bottom: 18px;
+   
+}
+
+.ft_text {
+   font-size: 12px;
+    color: #a9a9a9;
+    text-align: right;
+}
+
+
+
+
+
+.carousel_img {
+/*    position: absolute; top:0; left: 0; */
+   width: 100%;
+   height: auto; */
+}
+/*-------------------
+	main 진행중card
+---------------------*/
+.card_effect {
+    position: relative;
+    display: inline-block;
+    overflow: hidden; /* 불필요한 부분 가리기 */
+    padding: 1px;
+}
+.card_effect:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    height: auto;
+    background: orange;
+    content: "Best"; /* 보여주는 텍스트 */
+    text-align: center;
+    color: #fff;
+    font-family: 'Arial';
+    font-weight: bold;
+    padding: 5px 10px;
+    left: -30px;
+    top: 3px;
+    transform: rotate(-40deg);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.ellipsis3 {
+   overflow:hidden;
+   width:auto;
+   height:60px;
+   padding:0 10px;
+   display:-webkit-box;
+   -webkit-line-clamp:3; 
+   -webkit-box-orient:vertical;
+   line-height:20px;
+   text-overflow:ellipsis;
+}
+.ellipsis {
+    width: 200px;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    word-wrap: normal !important;
+    display: block;
+}

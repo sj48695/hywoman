@@ -1,0 +1,795 @@
+ul.style1 {
+   width: 80%;
+   margin: 0 auto;
+   padding: 0;
+   overflow: hidden;
+   list-style: none;
+   text-align: left;
+   color: #6c6c6c
+}
+
+ul.style1 li {
+   padding: 1.6em 0em 0em 0em;
+   margin: 0 0 2.5em 0;
+   border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+ul.style1 li:first-child {
+   border-top: none;
+}
+
+ul.style1 p {
+   margin: 0;
+}
+
+ul.style1 p {
+   margin: 0;
+}
+
+ul.style1 a {
+   display: block;
+   text-decoration: none;
+   color: #2D2D2D;
+}
+
+ul.style1 a:hover {
+   text-decoration: underline;
+}
+
+ul.style1 h3 {
+   padding: 1em 0em 5px 0em;
+   text-transform: uppercase;
+   font-size: 1em;
+   font-weight: 400;
+}
+
+ul.style1 .first {
+   padding-top: 0;
+   background: none;
+}
+
+ul.style1 .date {
+   float: left;
+   position: relative;
+   width: 80px;
+   height: 70px;
+   margin: 0.5em 1.5em 0em 0.5em;
+   padding: 1.5em 0em 1.5em 0em;
+   box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.1);
+   line-height: normal;
+   text-align: center;
+   text-transform: uppercase;
+   text-shadow: 0px 1px 0px rgba(0, 0, 0, .2);
+   font-size: 1em;
+   font-weight: 400;
+   border-right: 1px solid rgba(0, 0, 0, .1);
+}
+
+ul.style1 .date:after {
+   content: '';
+   display: block;
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   border-radius: 6px;
+}
+
+ul.style1 .date b {
+   margin: 0;
+   padding: 0;
+   display: block;
+   margin-top: -5px;
+   font-size: 1.8em;
+   font-weight: 700;
+}
+
+ul.style1 .date a {
+   
+}
+
+ul.style1 .date a:hover {
+   text-decoration: none;
+}
+
+--------------------------------------------
+.box {
+   margin-bottom: 2rem;
+   background: #FFF;
+}
+
+.box .content {
+   padding: 3rem;
+}
+
+.box>:last-child, .box>:last-child>:last-child, .box>:last-child>:last-child>:last-child
+   {
+   margin-bottom: 0;
+}
+
+.box.alt {
+   border: 0;
+   border-radius: 0;
+   padding: 0;
+}
+
+@media screen and (max-width: 736px) {
+   .box .content {
+      padding: 2rem;
+   }
+}
+
+.box {
+   border-color: rgba(144, 144, 144, 0.25);
+}
+
+form {
+   margin: 0 0 2rem 0;
+}
+
+form label {
+   display: block;
+   margin: 0.5rem 0;
+}
+
+.nn {
+   text-align: right;
+   padding-right: 1.5rem;
+   padding-top: 0.5rem;
+}
+
+.inp {
+   -webkit-appearance: none;
+   -ms-appearance: none;
+   border-radius: 4px;
+   border: solid 1px #BDBDBD;
+   color: inherit;
+   padding: 0 1rem;
+   margin: 0.5rem 0;
+   text-decoration: none;
+   width: 90%;
+   height: 2.75rem;
+}
+
+.inparea {
+   border-radius: 4px;
+   border: solid 1px #BDBDBD;
+   color: inherit;
+   padding: 1rem 1rem;
+   margin: 0.5rem 0;
+   text-decoration: none;
+   width: 90%;
+}
+
+
+.select-wrapper {
+   text-decoration: none;
+   display: block;
+   position: relative;
+}
+
+.select-wrapper:before {
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   font-family: FontAwesome;
+   font-style: normal;
+   font-weight: normal;
+   text-transform: none !important;
+}
+
+.select-wrapper:before {
+   content: '\f078';
+   display: block;
+   height: 2.75rem;
+   line-height: 2.75rem;
+   pointer-events: none;
+   position: absolute;
+   right: 0;
+   text-align: center;
+   top: 0;
+   width: 2.75rem;
+}
+
+.select-wrapper select::-ms-expand {
+   display: none;
+}
+
+input[type="text"], input[type="password"], input[type="email"], select
+   {
+   height: 2.75rem;
+}
+
+.ipp {
+   padding: 0.75rem 1rem;
+}
+
+input[type="checkbox"], input[type="radio"] {
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   display: block;
+   float: left;
+   margin-right: -2rem;
+   opacity: 0;
+   width: 1rem;
+   z-index: -1;
+}
+
+input[type="checkbox"]+label, input[type="radio"]+label {
+   text-decoration: none;
+   cursor: pointer;
+   display: inline-block;
+   font-size: 1rem;
+   font-weight: 300;
+   padding-left: 2.4rem;
+   padding-right: 0.75rem;
+   position: relative;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   font-family: FontAwesome;
+   font-style: normal;
+   font-weight: normal;
+   text-transform: none !important;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+   border-radius: 4px;
+   border: solid 1px;
+   content: '';
+   display: inline-block;
+   height: 1.65rem;
+   left: 0;
+   line-height: 1.58125rem;
+   position: absolute;
+   text-align: center;
+   top: 0;
+   width: 1.65rem;
+}
+
+input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before{
+	content: '\f00c';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 800;
+}
+
+input[type="checkbox"]+label:before {
+   border-radius: 4px;
+}
+
+input[type="radio"]+label:before {
+   border-radius: 100%;
+}
+
+::-webkit-input-placeholder {
+   opacity: 1.0;
+}
+
+:-moz-placeholder {
+   opacity: 1.0;
+}
+
+::-moz-placeholder {
+   opacity: 1.0;
+}
+
+:-ms-input-placeholder {
+   opacity: 1.0;
+}
+
+.formerize-placeholder {
+   opacity: 1.0;
+}
+
+label {
+   color: #555;
+}
+
+.inppp {
+   background: rgba(144, 144, 144, 0.075);
+   border-color: rgba(144, 144, 144, 0.25);
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus,
+   select:focus, textarea:focus {
+   border-color: #5AA6ED;
+   box-shadow: 0 0 0 1px #5AA6ED;
+}
+
+.select-wrapper:before {
+   color: rgba(144, 144, 144, 0.25);
+}
+
+input[type="checkbox"]+label, input[type="radio"]+label {
+   color: #444;
+}
+
+input[type="checkbox"]+label:before, input[type="radio"]+label:before {
+   background: rgba(144, 144, 144, 0.075);
+   border-color: rgba(144, 144, 144, 0.25);
+}
+
+input[type="checkbox"]:checked+label:before, input[type="radio"]:checked+label:before
+   {
+   background-color: #ff9557;
+   border-color: #ff9557;
+   color: #ffffff;
+}
+
+input[type="checkbox"]:focus+label:before, input[type="radio"]:focus+label:before
+   {
+   border-color: #5AA6ED;
+   box-shadow: 0 0 0 1px #5AA6ED;
+}
+
+::-webkit-input-placeholder {
+   color: #bbb !important;
+}
+
+:-moz-placeholder {
+   color: #bbb !important;
+}
+
+::-moz-placeholder {
+   color: #bbb !important;
+}
+
+:-ms-input-placeholder {
+   color: #bbb !important;
+}
+
+.formerize-placeholder {
+   color: #bbb !important;
+}
+
+
+--------------------------------------------------------------------------------------
+---
+-dr4
+.stp_logo_cate_box {
+   padding-right: 0;
+   float: right;
+}
+
+ul {
+   list-style: none;
+}
+
+.tdwUser {/* 디자이너 랭킹페이지에 사람얼굴 */ 
+   position:absolute;
+   left: 0;
+   right: 0;
+   margin: auto;
+   top: 220px;
+   border-radius: 100px;
+   width: 200px;
+   overflow: hidden;
+   background-color: #fff;
+   height: 200px;
+}
+
+.tdwUser2 { /* 디자이너 랭킹페이지에 사람얼굴  */
+   margin: auto;
+   border-radius: 100px;
+   overflow: hidden;
+   background-color: #fff;
+}
+
+.ilg {/* 이거 dr1에 이미지 정리하는거 */
+   margin-bottom:1rem;
+   margin-top: 1rem;
+}
+
+.wlRight {
+   width: 400px;
+}
+
+.v_mid {
+   vertical-align: middle;
+}
+
+.cl_inline {
+   display: inline-block;
+}
+
+.wlrTotal {
+   padding-bottom: 15px;
+   border-bottom: 1px solid #d4d4d4;
+}
+
+.cl_inline {
+   display: inline-block;
+   *display: inline;
+   *zoom: 1;
+}
+
+.v_top {
+   vertical-align: top;
+}
+.v_middle {
+   vertical-align: middle;
+}
+
+ -------------------- -insertMember2----------------------
+input[type=radio] .ipn {
+   display: none;
+   margin: 10px;
+}
+
+input[type=radio]+label .ipnn {
+   display: inline-block;
+   margin: -2px;
+   padding: 8px 19px;
+   background-color: orange;
+   border: 1px solid #ccc;
+   width: 110px;
+   text-align: center;
+}
+
+input[type=radio]:radio+label .ipnnn {
+   background-image: none;
+   background-color: red;
+   color: #red;
+}
+/* 
+.btnOr {
+   color: #fff;
+   background: #ff9557;
+   border: 1px solid #ff9557;
+   width: 190px;
+} */
+/* 
+.btnOr:link, .btnOr:active, .btnOr:visited { */
+   colo_info {
+   position: relative;
+   padding: 7px 0;
+}
+
+.bs1 {
+   border-collapse: separate;
+   border-spacing: 0 25px;
+}
+
+.insertsignd {
+   background-color: #f7f7f7;
+   color: #f2a3a5;
+   padding: 4em 0 2em 0;
+   background: #e5474b;
+   min-height: 700px;
+   padding: 60px 80px 40px 80px;
+   margin: 50px;
+}
+
+.isttxt {
+   color: #ffffff;
+}
+
+.istinput {
+   background: none;
+   border-color: #ffffff;
+   color: #ffffff;
+}
+
+.istbox {
+   padding: 0% 5% 0% 5%;
+   height: 100%;
+}
+
+.pdz {
+   padding: 0px;
+}
+
+.pd10 {
+   padding: 20px;
+}
+
+.pd10 {
+   padding: 10%;
+}
+
+.pds1 {
+   padding: 0% 1% 0% 1%;
+}
+
+.nb {
+   background-color: transparent;
+   box-shadow: inset 0 0 0 2px #fff;
+   color: #ffffff !important;
+}
+
+.r {
+   border-radius: 50%;
+}
+
+/* ----------이용약관페이지---------- */
+/*  ----------insertMember1------------ */
+.terms_bx {
+   display: block;
+   padding-top: 30px;
+}
+
+.terms_box {
+   position: relative;
+   overflow: auto;
+   height: 200px;
+   margin-top: 8px;
+   padding: 12px;
+   border: 1px solid #dadada;
+   background: #fff;
+   -webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+   box-sizing: border-box;
+   scrollbar-base-color: #d9d9d9;
+   scrollbar-arrow-color: #8e8e8e;
+   scrollbar-3dlight-color: #d9d9d9;
+   scrollbar-darkshadow-color: #d9d9d9;
+   scrollbar-face-color: #d9d9d9;
+   scrollbar-highlight-color: #d9d9d9;
+   scrollbar-shadow-color: #d9d9d9;
+   scrollbar-track-color: #f2f2f2;
+   -webkit-overflow-scrolling: touch;
+}
+
+.input_chk {
+   position: relative;
+   display: block;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.article__text__list {
+   position: relative;
+   padding-left: 20px;
+}
+
+.article__text__list:before {
+   content: '';
+   display: block;
+   position: absolute;
+   top: 7px;
+   left: 8px;
+   width: 2px;
+   height: 2px;
+   background: #8e8e8e;
+}
+
+.article__text+.article__text {
+   margin-top: 8px;
+}
+
+.chk_all_txt {
+   text-decoration: underline;
+}
+
+.insertsigns {
+   border-radius: 5px;
+   border: 2px solid #ccc;
+   background-color: #ffffff;
+   padding: 3% 2% 3% 2%;
+}
+
+.insertsignss {
+   border-radius: 5px;
+   border: 2px solid #ccc;
+   background-color: #ffffff; 
+   padding: 0%;
+}
+
+/* --------------------회원가입쓰는거-------------- */
+.uid {
+   padding-top: 15px;
+   vertical-align: top;
+}
+
+.inputtext {
+   width: 379px;
+   height: 38px;
+   padding: 0 40px 0 11px;
+   font-size: 16px;
+   font-weight: bold;
+   color: #333;
+   border-width: 1px;
+   border-color: #a3a4a5 #dbdbdb #dbdbdb #919293;
+   border-style: solid;
+   line-height: 36px;
+   font-family: "돋움", Dotum;
+   vertical-align: middle;
+}
+
+.footerbottom {
+   margin-bottom: 150px;
+}
+
+.logos {
+   width: 50%;
+   height: 50%;
+}
+
+.prog {
+   display: -ms-flexbox;
+   display: flex;
+   height: 1rem;
+   overflow: hidden;
+   font-size: .75rem;
+   background-color: #BDBDBD;
+   border-radius: .25rem;
+}
+
+.ull {
+   list-style: none;
+   padding: 0px;
+}
+
+.lii {
+   padding: 10px 0px 10px 0px;
+   border-bottom: 1px solid #ccc;
+}
+
+.margint {
+   margin-top: 15px;
+}
+
+.margintt {
+   margin-top: 30px;
+}
+
+.marginb {
+   margin-bottom: 15px;
+}
+
+.fontb {
+   font-weight: bold;
+}
+
+.priceText {
+   font-weight: bold;
+}
+
+.paddingz {
+   padding: 1%;
+}
+
+.marginr {
+   margin-right: 10px;
+}
+
+.paddinglz {
+   padding-left: 0px;
+}
+
+.listnon {
+   list-style: none;
+   padding-left: 0px;
+   margin: 20px;
+}
+
+/*  --------------------------insertMember1------------------------------------- */
+:root .input_chk input:checked+label:before {
+  /*  content: ''; */
+  /*  background: #f5f6f7 src(/ capstone/ signD/ module/ images1/ success.png)
+      no-repeat 0 0; */
+   -webkit-background-size: 20px 20px;
+   background-size: 20px 20px;
+}
+
+/* :root .input_chk label:before {
+   content: '';
+   position: absolute;
+   top: 50%;
+   left: 1px;
+   display: block;
+   width: 20px;
+   height: 20px;
+   margin-top: -10px;
+   background: #f5f6f7;
+      src(/ capstone/ signD/ module/ images1/ nonsuccess.png) no-repeat 0 0
+   background: #f5f6f7
+      url(https://static.nid.naver.com/images/ui/myinfo/pc_chcek_off_s_20.png)
+      no-repeat 0 0;
+   -webkit-background-s
+} */
+
+.input_chk label {
+   position: relative;
+   display: block;
+   width: 100%;
+   padding-left: 29px;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 21px;
+   cursor: pointer;
+   color: #333;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.lala {
+   position: relative;
+   display: block;
+   width: 100%;
+   padding-left: 29px;
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 21px;
+   cursor: pointer;
+   color: #333;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+.bgi {
+   width: 100%;
+   background-position: 0% 50%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
+   text-color:white;
+   background-image: url(../module/images1/bi.jpg);
+}
+
+/* ------------------designerList.jsp ------------------*/
+
+.wlItem {
+   border: 1px solid #d4d4d4;
+   padding: 28px 26px;
+   margin-bottom: 10px;
+}
+
+.wlBox {
+   position: relative;
+   /* padding-bottom: 10px; */
+}
+
+/* -------------------------------------- */
+
+
+.inpb {
+   border-radius: 4px;
+   border: solid 1px #BDBDBD;
+   height: 2.75rem;
+   padding: 0 1rem;
+    margin: 0.5rem 0;
+}
+
+.wlImg {
+    border-radius: 50px;
+    overflow: hidden;
+}
+.wlpId {
+    font-size: 22px;
+    font-weight: bold;
+    color: navy;
+}
+.v_mid {
+    vertical-align: middle;
+}
+/* .dsnhot{
+   border: solid 3px #A50000;
+   background-color: white;
+} */
+.bgi {
+   background-image: url(../module/images1/bi.jpg);
+   width: 100%;
+   background-position: 0% 50%;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
+}
+.wlBox {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.wlpTop {
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left:10%;
+    width:100%;}
+
+.wllTop{
+   width:100%;
+}

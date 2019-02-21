@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\sj486\capstone\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2284868640.index
+3588929843.index
+1069025211.index
+2686826899.index
+292220636.index
+1189655175.index

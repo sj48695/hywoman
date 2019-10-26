@@ -129,11 +129,11 @@
            <p>콘테스트 우승작을 확인해보세요!</p>
        </div>
    </div> -->
-   <div class="row">
+   <div class="row justify-content-center py-5">
 	<%
 		if (count == 0) {
 	%>
-		<div class="container">등록된 포트폴리오가 없습니다.</div>
+		<span>등록된 포트폴리오가 없습니다.</span>
 	<%
 		} else {
 			for (int i = 0; i < pplist.size(); i++) {

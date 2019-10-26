@@ -161,14 +161,15 @@
 				} */
 				startRow = (currentPage - 1) * pageSize + 1;
 				number = count - (currentPage - 1) * pageSize;
-				if (count == 0) {
+				
+				rqlist = rqdb.getOneToOneRequests(id, startRow, pageSize, "ing");
+				if (rqlist == null) {
 		%>
 					<tr class="text-center">
 	                  <th class="py-5"colspan="5">의뢰글이 없습니다.</th>
 	               	</tr>
 					<%
 				} else {
-					rqlist = rqdb.getOneToOneRequests(id, startRow, pageSize, "ing");
 					for (int i = 0; i < rqlist.size(); i++) {
 						rq = rqlist.get(i);
 						Dday = rqdb.getDday(rq.getRequestcode());

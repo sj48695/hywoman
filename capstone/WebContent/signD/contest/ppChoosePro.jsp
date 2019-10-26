@@ -8,8 +8,8 @@
 <%
 	request.setCharacterEncoding("utf-8");
 	String id = (String) session.getAttribute("id");
-	int rqcode=Integer.parseInt(request.getParameter("rqcode"));
-	int ppcode=Integer.parseInt(request.getParameter("ppcode"));
+	int rqcode=Integer.parseInt(request.getParameter("rqcode"));//콘테스트번호
+	int ppcode=Integer.parseInt(request.getParameter("ppcode"));//참여작번호
 	
 	RequestDBBean rqdb = RequestDBBean.getInstance();
 	AlarmDBBean alarmdb=AlarmDBBean.getInstance();
@@ -28,6 +28,5 @@
 		alarm.setContents(id+"님이 당신의 의뢰글을 채택하였습니다.");
 		alarm.setType("참여작 채택");
 		alarmdb.insertAlarm(alarm); 
-	}else{
 	}
-%><%=check %>
+%>

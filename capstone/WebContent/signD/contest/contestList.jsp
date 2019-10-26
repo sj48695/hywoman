@@ -84,9 +84,9 @@
 	<div class="row">
 		<%
 			rqlist = rqdb.contestListTop3("ing");
-			for (int i = 0; i < rqlist.size(); i++) {
-				rq = rqlist.get(i);
-				recount = replydb.getReplyCount("requestcode", rq.getRequestcode());
+		
+			if(rqlist == null){
+				for(int i = 0; i < 3; i++){
 		%>
 		<div class="col-lg-4">
 			<div class="row justify-content-center">
@@ -94,10 +94,44 @@
 					<img alt="BEST <%=i%>" class="col-sm-3"
 						src="http://fiximage.10x10.co.kr/web2015/shopping/ico_best<%=i + 1%>.png">
 				</div>
-				<img alt="<%=rq.getCategory()%>" class="col-sm-8 p-0 h-100 pointer"
+				<img class="col-sm-8 p-0 h-100 pointer" style=" border: 1px solid #f1f1f1;"
+					src="/capstone/signD/module/images/sample.jpg"
+					onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+					<div class="new_list_sub_top p-0">
+						<div class="new_list_cate inline">
+							Category
+							&nbsp;|&nbsp;
+						</div>
+						<h1 class="new_list_title inline" style="font-size: 14px;">
+							콘테스트 등록하러가기
+						</h1>
+					</div>
+				</div>
+			</div>
+			<hr class="my-3">
+			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+				<img src="/capstone/signD/module/images/view.png"/>0&nbsp;&nbsp;
+				<img src="/capstone/signD/module/images/talk.png"/>0
+			</div>
+		</div>
+		<%
+				}
+			}else{
+				for (int i = 0; i < rqlist.size(); i++) {
+					rq = rqlist.get(i);
+					recount = replydb.getReplyCount("requestcode", rq.getRequestcode());
+		%>
+		<div class="col-lg-4">
+			<div class="row justify-content-center">
+				<div class="col-sm-12 pb-4 row justify-content-center">
+					<img alt="BEST <%=i%>" class="col-sm-3"
+						src="http://fiximage.10x10.co.kr/web2015/shopping/ico_best<%=i + 1%>.png">
+				</div>
+				<img alt="<%=rq.getCategory()%>" class="col-sm-8 p-0 h-100 pointer" style=" border: 1px solid #f1f1f1;"
 					src="/capstone/signD/module/images/<%=rq.getCategory()%>.jpg"
 					onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
-				<div onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+				<div class="col-sm-12 row justify-content-center" onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
 					<div class="new_list_sub_top p-0">
 						<div class="new_list_cate inline">
 							<%=rq.getCategory()%>
@@ -116,6 +150,38 @@
 			</div>
 		</div>
 		<%
+				}
+				for (int i = 0; i < 3-rqlist.size(); i++) {
+		%>
+		<div class="col-lg-4">
+			<div class="row justify-content-center">
+				<div class="col-sm-12 pb-4 row justify-content-center">
+					<img alt="BEST <%=i%>" class="col-sm-3"
+						src="http://fiximage.10x10.co.kr/web2015/shopping/ico_best<%=i + 1%>.png">
+				</div>
+				<img class="col-sm-8 p-0 h-100 pointer" style=" border: 1px solid #f1f1f1;"
+					src="/capstone/signD/module/images/sample.jpg"
+					onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+					<div class="new_list_sub_top p-0">
+						<div class="new_list_cate inline">
+							Category
+							&nbsp;|&nbsp;
+						</div>
+						<h1 class="new_list_title inline" style="font-size: 14px;">
+							콘테스트 등록하러가기
+						</h1>
+					</div>
+				</div>
+			</div>
+			<hr class="my-3">
+			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+				<img src="/capstone/signD/module/images/view.png"/>0&nbsp;&nbsp;
+				<img src="/capstone/signD/module/images/talk.png"/>0
+			</div>
+		</div>
+		<%
+				}
 			}
 		%>
 	</div>
@@ -144,7 +210,7 @@
    <%
       if (count == 0) {
    %>
-   <div class="alert alert-danger" role="alert">등록된 콘테스트가 없습니다.</div>
+   <div class="row justify-content-center py-5" role="alert"><span>등록된 콘테스트가 없습니다.</span></div>
    <%
       } else {
          
@@ -158,11 +224,11 @@
    <div style="position: relative; overflow: hidden;">
       <div class="new_list_icon">
             <%if (bmdb.getBookmarkCheck(id, rq.getRequestcode(), null) == 1) {%>
-            <div data-toggle="button" aria-pressed="true" id="star<%=i%>">
+            <div class="star" data-toggle="button" aria-pressed="true" data-rqcode="<%=rq.getRequestcode() %>">
                <font size="5"><i class="fas fa-star"></i></font>
             </div>
             <%} else {%>
-            <div data-toggle="button" aria-pressed="false" id="star<%=i%>">
+            <div class="star" data-toggle="button" aria-pressed="false" data-rqcode="<%=rq.getRequestcode() %>">
                <font size="5"><i class="far fa-star"></i></font>
             </div>
             <%}%>
@@ -199,11 +265,7 @@
       </div>
    </div>
    <script type="text/javascript">
-      $(document).ready(function() {
-         $("#star<%=i%>").click(function(){
-            bmCheck("<%=i%>",<%=rq.getRequestcode()%>,null,"<%=id%>");
-          });
-         
+      $(document).ready(function() {         
          if(<%=rq.getOp_bgcolor()%>==1){
             $(".bgcolor<%=i%>").attr("style","background: antiquewhite");
          }else{

@@ -970,63 +970,49 @@ public class RequestDBBean {
 	public int updatePpcode(int rqcode, int ppcode,int prize_money) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-		ResultSet rsSelect=null;
-		int x=0;
-		int rsUpdate=0;
+		ResultSet rs=null;
+		int check=0;
 		String sql="";
 			        
 		try{
 			conn = getConnection();
-			sql="select ppcode from request where requestcode=?";
+			sql="select ppcode from request where requestcode=?";//해당콘테스트의 채택된 참여작코드
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, rqcode);
-			rsSelect=pstmt.executeQuery();
+			rs=pstmt.executeQuery();
 			
-			
-			if(rsSelect.next()) {
-
-				sql="update member set choosecount = choosecount";
-				if(rsSelect.getInt(1)==0) {//채택이 안되어있는 상태
+			if(rs.next()) {
+				sql="update member set choosecount = choosecount";//참여한 디자이너의 우승 수
+				if(rs.getInt(1)==0) {//채택이 안되어있는 상태(채택하기)
 					sql += " + 1 where id=(select id from participation where ppcode=?)";
 					pstmt = conn.prepareStatement(sql);
 					pstmt.setInt(1, ppcode);
-					pstmt.executeUpdate();
-					
-					sql="update request set ppcode=? where requestcode=?";
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1, ppcode);
-					pstmt.setInt(2, rqcode);
-					pstmt.executeUpdate();
-					
-				}else {//채택이 되어있는 상태
+				}else {//채택이 되어있는 상태(채택취소)
 					sql += " - 1 where id=(select id from participation where ppcode=?)";
 					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1, rsSelect.getInt(1));
-					pstmt.executeUpdate();
-					
-					sql="update request set ppcode=0 where requestcode=?";
-					pstmt = conn.prepareStatement(sql);
-					pstmt.setInt(1, rqcode);
-					pstmt.executeUpdate();
+					pstmt.setInt(1, rs.getInt(1));
+					ppcode = 0;
 				}
-				rsUpdate=pstmt.executeUpdate();
+				pstmt.executeUpdate();
 				
-				
-				if(rsUpdate>0) {
-					x=1;
-				}
+				sql="update request set ppcode=? where requestcode=?";
+				pstmt = conn.prepareStatement(sql);
+				pstmt.setInt(1, ppcode);
+				pstmt.setInt(2, rqcode);
+			
+				if(pstmt.executeUpdate()>0) check=1;
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally{
-			if (rsSelect != null) 
-	       	 	try { rsSelect.close(); } catch(SQLException ex) {}
+			if (rs != null) 
+	       	 	try { rs.close(); } catch(SQLException ex) {}
 			if (pstmt != null) 
 				try { pstmt.close(); } catch(SQLException ex) {}
 			if (conn != null) 
 				try { conn.close(); } catch(SQLException ex) {}
 		}
-		return x;
+		return check;
 	}
 	
 	//개최한 글 삭제

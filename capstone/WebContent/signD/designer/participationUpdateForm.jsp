@@ -71,7 +71,7 @@
 				</div> -->
 			</div>
 			<div class="form-group row imgs_wrap">
-				<label class="col-form-label col-sm-2"></label>
+				<!-- <label class="col-form-label col-sm-2"></label> -->
 					<%
 						for (int i = 0; i < filenames.length; i++) {
 					%>

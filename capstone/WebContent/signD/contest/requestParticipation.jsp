@@ -32,12 +32,12 @@
 %>
 
 <div class="w3-container row py-5">
-<div class="container row justify-content-end pb-2"><font color="darksalmon">※개최한 의뢰자, 참여한 디자이너만 볼 수 있습니다.</font></div>
+	<div class="container row justify-content-end pb-2"><font color="darksalmon">※개최한 의뢰자, 참여한 디자이너만 볼 수 있습니다.</font></div>
 <%
 	if (count == 0) {
 %>
- <img class="row my-5"style="width: auto; height: auto; max-width: 200px; max-height: 200px; 
-  margin-left: auto; margin-right: auto; display: block;" src="../module/images/hmm.png" /> 
+ 	<img class="row my-5"style="width: auto; height: auto; max-width: 200px; max-height: 200px; 
+  		margin-left: auto; margin-right: auto; display: block;" src="../module/images/hmm.png" /> 
 	<h5 class="container py-5">등록된 참여작이 없습니다.</h5>
 	<script>
 		$(document).ready(function(){
@@ -99,12 +99,22 @@
 		<%}%>
 		});
 	</script><% 
-			}
-			if(!id.equals(rq.getId()) && !managerId.equals("manager") && !id.equals(pp.getId())){
-				%>
-				 <img class="row my-5"style="max-width: 200px; max-height: 200px; 
-margin-left: auto; margin-right: auto; display: block;" src="../module/images/rock.png" /> 
-				<%
+				if(!id.equals(rq.getId()) && !managerId.equals("manager") && !id.equals(pp.getId())){
+			%>
+	<div class="contest-portfolio-item col-md-3">
+		<div class="contest-portfolio-thumb">
+			<img class="px-1" src="../module/images/rock.png" style="height: 200px;">
+			<div class="contest-portfolio-overlay">
+				<h3><%=pp.getTitle() %></h3>
+				<p class="a"><%=pp.getContents() %></p>
+				<!-- <a href="images/gallery/p1.jpg" data-rel="lightbox" class="expand"> -->
+				<!-- <i class="fa fa-search"></i> -->
+			</div>
+		</div>
+		<div class="con_title"><b><%=pp.getTitle()%></b></div>
+	</div>
+			<%
+				}
 			}
 		} else {
 	%>

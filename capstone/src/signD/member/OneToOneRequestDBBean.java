@@ -223,9 +223,9 @@ public class OneToOneRequestDBBean {
 			if(member.getType().equals("의뢰인")) {
 				sql+="requester_id = ? ";
 				if (current.equals("ing")) {// 진행중
-					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) >=0 ";
+					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) >=0 and accept = 1";
 				} else if (current.equals("end")) {// 종료된
-					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) <0 ";
+					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) <0 and accept = 1";
 				} else if(current.equals("still")){
 					sql += "and (accept = 0 or accept=2)";
 				}
@@ -233,9 +233,9 @@ public class OneToOneRequestDBBean {
 			}else if(member.getType().equals("디자이너")){
 				sql+="designer_id = ? ";
 				if (current.equals("ing")) {// 진행중
-					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) >=0";
+					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) >=0 and accept = 1";
 				} else if (current.equals("end")) {// 종료된
-					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) <0";
+					sql += "and TO_DAYS(end_date)-TO_DAYS(now()) <0 and accept = 1";
 				} else if(current.equals("still")){
 					sql += "and accept = 0";
 				}

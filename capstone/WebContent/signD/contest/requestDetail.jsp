@@ -100,19 +100,14 @@
 			</td>
             <td rowspan="2">
             <% if (bmcheck == 1) {  %>
-               <div class="offset-10" data-toggle="button" aria-pressed="true" id="star">
+               <div class="star offset-10" data-toggle="button" aria-pressed="true" data-rqcode="<%=rq.getRequestcode()%>">
                   <font size="5"><i class="fas fa-star"></i></font>
                </div>
             <%} else {%>
-               <div class="offset-10" data-toggle="button" aria-pressed="false" id="star">
+               <div class="star offset-10" data-toggle="button" aria-pressed="false" data-rqcode="<%=rq.getRequestcode()%>">
                   <font size="5"><i class="far fa-star"></i></font>
                </div>
           	<%}%>
-               <script>
-                $("#star").click(function(){
-                   bmCheck("",<%=rq.getRequestcode()%>,null,"<%=id%>");
-               });
-               </script>
             </td>
          </tr>
          <tr>

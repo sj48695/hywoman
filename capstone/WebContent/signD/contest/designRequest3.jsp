@@ -182,8 +182,7 @@
 	            </div>
 		      </div>
 		      <div class="new_list_item m-2 media row justify-content-between bgcolor">
-		         <div class="col-sm-8 pr-0 row align-self-center"
-		            onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+		         <div class="col-sm-8 pr-0 row align-self-center" >
 		            <div class="new_list_img align-self-center">
 		               <img src="/capstone/signD/module/images/<%=rq.getCategory()%>.jpg"
 		                  alt="<%=rq.getCategory()%>">

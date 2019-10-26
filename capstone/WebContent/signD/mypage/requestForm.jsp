@@ -103,11 +103,11 @@
 		<div style="position: relative; overflow: hidden;">
 	      <div class="new_list_icon">
 	            <%if (bmdb.getBookmarkCheck(id, rq.getRequestcode(), null) == 1) {%>
-	            <div data-toggle="button" aria-pressed="true" id="star0<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="true" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="fas fa-star"></i></font>
 	            </div>
 	            <%} else {%>
-	            <div data-toggle="button" aria-pressed="false" id="star0<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="false" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="far fa-star"></i></font>
 	            </div>
 	            <%}%>
@@ -145,10 +145,6 @@
 	   </div>
 	   <script type="text/javascript">
 	      $(document).ready(function() {
-	         $("#star0<%=i%>").click(function(){
-	            bmCheck("0<%=i%>",<%=rq.getRequestcode()%>,null,"<%=id%>");
-	          });
-	         
 	         if(<%=rq.getOp_bgcolor()%>==1){
 	            $(".bgcolor0<%=i%>").attr("style","background: antiquewhite");
 	         }else{
@@ -229,11 +225,11 @@
 		<div style="position: relative; overflow: hidden;">
 	      <div class="new_list_icon">
 	            <%if (bmdb.getBookmarkCheck(id, rq.getRequestcode(), null) == 1) {%>
-	            <div data-toggle="button" aria-pressed="true" id="star1<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="true" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="fas fa-star"></i></font>
 	            </div>
 	            <%} else {%>
-	            <div data-toggle="button" aria-pressed="false" id="star1<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="false" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="far fa-star"></i></font>
 	            </div>
 	            <%}%>
@@ -274,11 +270,7 @@
 	      </div>
 	   </div>
 	   <script>
-	       $(document).ready(function(){
-	          $("#star1<%=i%>").click(function(){
-	                bmCheck("1<%=i%>",<%=rq.getRequestcode()%>,null,"<%=id%>");
-	             });
-	          
+	       $(document).ready(function(){	          
 	            if(<%=rq.getOp_bgcolor()%>==1){
 	               $(".bgcolor1<%=i%>").attr("style","background: antiquewhite");
 	            }else{

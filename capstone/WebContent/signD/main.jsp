@@ -137,7 +137,7 @@
       </div>
       <%
             }
-            for(int i=0;i<4-rqlist.size();i++){
+            for(int i = 0; i < 4-rqlist.size(); i++){
       %>
       <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
          <div class="card mb-4 shadow-sm">
@@ -157,11 +157,10 @@
       <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
          <div class="card mb-4 shadow-sm">
             <div class="card_effect">
-               <img class="card-img-top" src="/capstone/signD/module/images/1.jpg" alt="Card image cap">
+               <img class="card-img-top" src="/capstone/signD/module/images/sample.jpg" alt="Card image cap">
             </div>
             <div class="card-body">
-               <h6><span class="badge badge-secondary"><%=i%></span><%=i %></h6>
-               <p class="card-text ellipsis3"><%=i %></p>
+               <p class="card-text ellipsis3">콘테스트 의뢰하러가기</p>
             </div>
          </div>
       </div>

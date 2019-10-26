@@ -61,7 +61,7 @@
 				</div> -->
 			</div>
 			<div class="form-group row imgs_wrap">
-				<label class="col-form-label col-sm-2"></label>
+				<!-- <label class="col-form-label col-sm-2"></label> -->
 			</div>
 			<div class="form-group col-9 offset-2 justify-content-end row justify-content-end p-0 mt-5">
 				<button type="submit" class="btn btnOr btn-lg col-sm-2">등록</button>

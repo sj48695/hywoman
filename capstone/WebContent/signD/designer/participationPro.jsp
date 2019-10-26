@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.oreilly.servlet.multipart.FileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.multipart.ParamPart"%>
 <%@page import="java.io.*"%>
@@ -11,8 +12,6 @@
 <%@page import="com.oreilly.servlet.multipart.FilePart"%>
 <%@page import="com.oreilly.servlet.multipart.MultipartParser"%>
 <%@page import="com.oreilly.servlet.multipart.Part"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -34,24 +33,20 @@
 
 	String saveFolder = "/fileSave/participationFile/" + category;//파일이 업로드되는 폴더
 	String encType = "utf-8"; //엔코딩타입
-	int maxSize = 5 * 1024 * 1024; //최대 업로될 파일크기 5Mb
+	int maxSize = 1024 * 1024 * 1024; //최대 업로될 파일크기 
 
 	//현재 jsp페이지의 웹 어플리케이션상의 절대 경로를 구한다
 	ServletContext context = getServletContext();
 	realFolder = context.getRealPath(saveFolder);
 	
 	String saveFolder1 = "/fileSave/portfolioFile/" + category;//파일이 업로드되는 폴더
-	String encType1 = "utf-8"; //엔코딩타입
-	int maxSize1 = 5 * 1024 * 1024; //최대 업로될 파일크기 5Mb
 
-	//현재 jsp페이지의 웹 어플리케이션상의 절대 경로를 구한다
-	ServletContext context1 = getServletContext();
-	realFolder1 = context1.getRealPath(saveFolder1);
+	realFolder1 = context.getRealPath(saveFolder1);
 
 	try {
 		//전송을 담당할 콤포넌트를 생성하고 파일을 전송한다.
 		
-		MultipartParser parser = new MultipartParser(request, 1024 * 1024 * 1024);
+		MultipartParser parser = new MultipartParser(request, maxSize);
 		Part _part;
 
 		while ((_part = parser.readNextPart()) != null) {
@@ -64,15 +59,15 @@
 					fPart.setRenamePolicy(policy);
 					fPart.writeTo(new File(realFolder));
 					fPart.writeTo(new File(realFolder1));
-					filenames = filenames + fPart.getFileName() + ",";
+					filenames = filenames + filename + ",";
 				}
 			} else if (_part.isParam()) {
 				ParamPart pPart = (ParamPart) _part;
 				paramName = pPart.getName();
 				if (paramName.equals("title")) {
-					title = new String(pPart.getStringValue().getBytes("8859_1"), "utf-8");
+					title = new String(pPart.getStringValue().getBytes("8859_1"), encType);
 				} else if (paramName.equals("contents")) {
-					contents = new String(pPart.getStringValue().getBytes("8859_1"), "utf-8");
+					contents = new String(pPart.getStringValue().getBytes("8859_1"), encType);
 				} else if (paramName.equals("requestcode")) {
 					rqcode = Integer.parseInt(pPart.getStringValue());
 				}

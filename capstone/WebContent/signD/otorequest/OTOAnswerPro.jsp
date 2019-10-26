@@ -19,6 +19,7 @@
 	String id = (String) session.getAttribute("id");
 	String category = request.getParameter("category");
 	String realFolder = "";//웹 어플리케이션상의 절대 경로
+	String realFolder1 = "";//웹 어플리케이션상의 절대 경로
 	String filename = "";
 	String filenames = "";
 	String paramName = "";
@@ -54,7 +55,7 @@
 					FileRenamePolicy policy = new DefaultFileRenamePolicy();
 					fPart.setRenamePolicy(policy);
 					fPart.writeTo(new File(realFolder));
-					filenames = filenames + fPart.getFileName() + ",";
+					filenames = filenames + filename + ",";
 				}
 			} else if (_part.isParam()) {
 				ParamPart pPart = (ParamPart) _part;

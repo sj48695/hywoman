@@ -30,29 +30,31 @@ public class BookmarkDBBean {
 	    return ds.getConnection();
 	}
 	
-	public int insertBookmark(BookmarkDataBean bm) 
-	            throws Exception {
+	//즐겨찾기
+	public int bookmark(BookmarkDataBean bm) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
+		BookmarkDBBean db = new BookmarkDBBean();
+		int bmCheck = db.getBookmarkCheck(bm.getId(), bm.getRequestcode(), bm.getDesigner_id());//즐겨찾기 되어있는지 확인
 		int rs=0;
 		int x=-1;
 			        
 		try {
 			conn = getConnection();
-
-			pstmt = conn.prepareStatement("insert into bookmark(id,designer_id,requestcode,reg_date) values (?,?,?,?)");
-			pstmt.setString(1, bm.getId());
-			pstmt.setString(2, bm.getDesigner_id());
-			pstmt.setInt(3, bm.getRequestcode());
-			pstmt.setTimestamp(4, bm.getReg_date());
-			rs=pstmt.executeUpdate();
-			
-			if(rs>0) {
-				x=1;
-			}else {
-				x=0;
+			if (bmCheck==0) {//즐겨찾기설정하기
+				pstmt = conn.prepareStatement("insert into bookmark(requestcode, id, designer_id) values (?,?,?)");
+			} else if(bmCheck==1){//즐겨찾기해제하기
+				pstmt = conn.prepareStatement("delete from bookmark where requestcode=? and id=? and designer_id=?");
 			}
-		} catch(Exception e) {
+			pstmt.setInt(1, bm.getRequestcode());
+			pstmt.setString(2, bm.getId());
+			pstmt.setString(3, bm.getDesigner_id());
+			rs = pstmt.executeUpdate();
+
+			if (rs > 0) x = 1;// 성공
+			else x = 0;// 실패
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			if (pstmt != null) 
@@ -187,7 +189,7 @@ public class BookmarkDBBean {
 		return rqs;
 	}
 	
-	// 콘테스트 즐겨찾기 정보를 표시
+	// 디자이너 즐겨찾기 정보를 표시
 	public List<LogonDataBean> getDesignerBm(String id) 
 			throws Exception {
 		Connection conn = null;
@@ -236,46 +238,10 @@ public class BookmarkDBBean {
 				try { conn.close(); } catch (SQLException ex) { }
 		}
 		return members;
-	}
-	
-	
-	//즐겨찾기 삭제
-    public int deleteBookmark(BookmarkDataBean bm) 
-    		throws Exception {
-    	Connection conn = null;
-        PreparedStatement pstmt = null;
-        int rs = 0;
-        int x=-1;
-        
-		try {
-			conn = getConnection();
-
-			pstmt = conn.prepareStatement("delete from bookmark "
-					+ "where requestcode=? and id=? and designer_id=?");
-			pstmt.setInt(1, bm.getRequestcode());
-			pstmt.setString(2, bm.getId());
-			pstmt.setString(3, bm.getDesigner_id());
-			rs = pstmt.executeUpdate();
-
-			if (rs>0) {
-				x=1;
-			}else {
-				x=0;
-			}
-		}catch(Exception ex) {
-            ex.printStackTrace();
-        }finally {
-            if (pstmt != null) 
-           	 try { pstmt.close(); } catch(SQLException ex) {}
-            if (conn != null) 
-           	 try { conn.close(); } catch(SQLException ex) {}
-        }
-        return x;
-    }
+	}	
     
     //콘테스트 즐겨찾기확인
-    public int getBookmarkCheck(String id,Integer rqcode,String designerid) 
-    		throws Exception {
+    public int getBookmarkCheck(String id,Integer rqcode,String designerid) throws Exception {
     	Connection conn = null;
     	PreparedStatement pstmt = null;
     	ResultSet rs = null;
@@ -284,8 +250,8 @@ public class BookmarkDBBean {
     	try {
 			conn = getConnection();
 			pstmt = conn.prepareStatement("select * from bookmark "
-					+ "where requestcode="+rqcode+" and id=? "
-					+ "or designer_id=? and id=?");
+					+ "where (requestcode="+rqcode+" and id=?) "
+					+ "or (designer_id=? and id=?)");
 			pstmt.setString(1, id);
 			pstmt.setString(2, designerid);
 			pstmt.setString(3, id);

@@ -69,14 +69,14 @@
                %>
                <a class="btn btn-outline-dark col-5" href="../manager/Q&AWriteForm.jsp?qnacode=<%=qnacode%>&re_step=<%=qna.getRe_step() %>" 
                    role="button"><i class="far fa-edit"></i>답변달기</a> 
-				<a class="btn btn-outline-dark" role="button"
-					href="../manager/Q&AUpdateForm.jsp?qnacode=<%=qnacode%>">수정</a>
-                <a class="btn btn-outline-dark offset-1" href="../manager/Q&ADelPro.jsp?qnacode=<%=qnacode%>" role="button">
+                <a class="btn btn-outline-dark col-5 offset-1" href="../manager/Q&ADelPro.jsp?qnacode=<%=qnacode%>" role="button">
                   <i class="far fa-edit"></i>삭제</a>
                 <%
                    }else{
                       if(id.equals(qna.getId())) {
                 %> 
+				<a class="btn btn-outline-dark col-5" role="button"
+					href="../manager/Q&AUpdateForm.jsp?qnacode=<%=qnacode%>">수정</a>
                 <a class="btn btn-outline-dark col-5 offset-1" href="Q&ADelPro.jsp?qnacode=<%=qnacode%>" role="button">
                   <i class="far fa-edit"></i>삭제</a>
                <%

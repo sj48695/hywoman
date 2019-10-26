@@ -22,7 +22,7 @@
 	String tab = request.getParameter("tab");
 
 	LogonDBBean logon = LogonDBBean.getInstance();
-	LogonDataBean member = logon.getMember(designerId);
+	LogonDataBean designer = logon.getMember(designerId);
 
 	PortfolioDBBean pfdb = PortfolioDBBean.getInstance();
 	List<PortfolioDataBean> pflist =null;
@@ -32,7 +32,7 @@
 	RequestDataBean rq = null;
 
 	BookmarkDBBean bmdb = BookmarkDBBean.getInstance();
-	int bmcheck = bmdb.getBookmarkCheck(id, null, member.getId());
+	int bmcheck = bmdb.getBookmarkCheck(id, null, designer.getId());
 
 	if (pageNum == null) {
 		pageNum = "1";
@@ -59,47 +59,47 @@
 	<div style="position: relative; overflow: hidden;">
 		<div class="new_list_icon">
             <%if (bmcheck == 1) {%>
-            <div data-toggle="button" aria-pressed="true" id="star">
+            <div class="star" data-toggle="button" aria-pressed="true" data-designer="<%=designer.getId()%>">
                <font size="5"><i class="fas fa-star"></i></font>
             </div>
             <%} else {%>
-            <div data-toggle="button" aria-pressed="false" id="star">
+            <div class="star" data-toggle="button" aria-pressed="false" data-designer="<%=designer.getId()%>">
                <font size="5"><i class="far fa-star"></i></font>
             </div>
             <%}%>
 		</div>
 		<div class="wlItem row p-3 m-2 media" >
 			<div class="col-md-2 align-self-center">
-				<img src="../../imageFile/profileImg/<%=member.getProfileimg()%>" class="rounded-circle" style="width: 100px; height: 100px">
+				<img src="../../imageFile/profileImg/<%=designer.getProfileimg()%>" class="rounded-circle" style="width: 100px; height: 100px">
 			</div>
 			<div class="col-md-10 align-self-center">
 				<div>
-					<b><%=member.getName()%>(<%=member.getId()%>)</b>님	|	<%=member.getType()%>
+					<b><%=designer.getName()%>(<%=designer.getId()%>)</b>님	|	<%=designer.getType()%>
 					<font size="5"><i class="far fa-envelope" data-toggle="modal" data-target="#send"></i></font>
 					<div class="modal fade" id="send" tabindex="-1" role="dialog" aria-hidden="true">
 						<jsp:include page="../mypage/msgSendForm.jsp" flush="false">
-							<jsp:param value="<%=member.getId()%>" name="to_id"/>
+							<jsp:param value="<%=designer.getId()%>" name="to_id"/>
 						</jsp:include>
 					</div>
 				<br>
-				<%if (member.getType().equals("디자이너")) {%>
-					우승횟수 <%=member.getChoosecount() %>회 | 우승상금 <%=price.format(logon.getPrize_money(member.getId()))%>원
+				<%if (designer.getType().equals("디자이너")) {%>
+					우승횟수 <%=designer.getChoosecount() %>회 | 우승상금 <%=price.format(logon.getPrize_money(designer.getId()))%>원
 				<%}%>
 				</div>
 				<br>
 				<div>
-					<%=member.getIntroduction()%>
+					<%=designer.getIntroduction()%>
 					<div class="row justify-content-end always">
 					<%
-						if (member.getId().equals(id)) {
-							if (member.getOp_onetoone() == 1) {
+						if (designer.getId().equals(id)) {
+							if (designer.getOp_onetoone() == 1) {
 					%>
 						<button class="btn btnOr" onclick="always(0)">1:1의뢰 항상 수락</button>
 						<%} else {%>
 						<button class="btn" onclick="always(1)">1:1의뢰 항상 거절</button>
 					<%		}
 						} else {
-							if (member.getOp_onetoone() == 1) {
+							if (designer.getOp_onetoone() == 1) {
 					%>
 						<button class="btn btnOr" 
 							onclick="location.href='/capstone/signD/otorequest/OTORequest1.jsp?designerId=<%=designerId%>'">1:1의뢰하기</button>
@@ -114,16 +114,11 @@
 			</div>
 		</div>
 	</div>
-	<script>
-	 $("#star").click(function(){
-		 bmCheck("",null,"<%=member.getId() %>","<%=id%>");
-	});
-	</script>	
 	<hr>
 	<div class="py-3">
 		<h4><label class="col-sm-3 col-form-label"><i class="fas fa-angle-right fa-fw mr-1 w3-xlarge w3-text-orange"></i>프로필</label></h4>
-		<p class="mx-5"><i class="fas fa-address-card fa-fw mr-3 w3-large"></i>한줄소개 : <%=member.getIntroduction()%></p>
-		<p class="mx-5"><i class="fa fa-envelope fa-fw mr-3 w3-large"></i>email : <%=member.getEmail()%></p>
+		<p class="mx-5"><i class="fas fa-address-card fa-fw mr-3 w3-large"></i>한줄소개 : <%=designer.getIntroduction()%></p>
+		<p class="mx-5"><i class="fa fa-envelope fa-fw mr-3 w3-large"></i>email : <%=designer.getEmail()%></p>
 	</div>
 	<div class="py-3">
 		<h4><label class="col-sm-3 col-form-label"><i class="fas fa-angle-right fa-fw mr-1 w3-xlarge w3-text-orange"></i>포트폴리오</label></h4>

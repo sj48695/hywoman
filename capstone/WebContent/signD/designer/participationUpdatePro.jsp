@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.oreilly.servlet.multipart.FileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
@@ -12,8 +13,6 @@
 <%@ page import="java.sql.*"%>
 <%@ page import="java.io.*"%>
 <%@ page import="java.util.*"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
 
 
 <%
@@ -65,13 +64,14 @@
 			}
 			if (_part.isFile()) {
 				FilePart fPart = (FilePart) _part; // get some info about the file
+				//filename = new String(fPart.getFileName().getBytes("8859_1"), "utf-8");
 				filename = fPart.getFileName();
 				if (filename == null || filename.equals("")) {
 				} else if (filename != null) {
 					FileRenamePolicy policy = new DefaultFileRenamePolicy();
 					fPart.setRenamePolicy(policy);
 					fPart.writeTo(new File(realFolder));
-					filenames = filenames + fPart.getFileName() + ",";
+					filenames = filenames + filename + ",";
 				}
 
 			}

@@ -108,11 +108,11 @@
 		<div style="position: relative; overflow: hidden;">
 	      <div class="new_list_icon">
 	            <%if (bmdb.getBookmarkCheck(id, rq.getRequestcode(), null) == 1) {%>
-	            <div data-toggle="button" aria-pressed="true" id="star<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="true" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="fas fa-star"></i></font>
 	            </div>
 	            <%} else {%>
-	            <div data-toggle="button" aria-pressed="false" id="star<%=i%>">
+	            <div class="star" data-toggle="button" aria-pressed="false" data-rqcode="<%=rq.getRequestcode()%>">
 	               <font size="5"><i class="far fa-star"></i></font>
 	            </div>
 	            <%}%>
@@ -154,10 +154,6 @@
 	   </div>
 	   <script type="text/javascript">
 	      $(document).ready(function() {
-	         $("#star<%=i%>").click(function(){
-	            bmCheck("<%=i%>",<%=rq.getRequestcode()%>,null,"<%=id%>");
-	          });
-	         
 	         if(<%=rq.getOp_bgcolor()%>==1){
 	            $(".bgcolor<%=i%>").attr("style","background: antiquewhite");
 	         }else{
@@ -215,16 +211,17 @@
 			currentPage = count / 10 + 1;
 		} */
 		 startRow = (currentPage - 1) * pageSize + 1;
-		if (count==0) {
-	%>
+	
+		designerlist = bmdb.getDesignerBm(id);
+		if(designerlist == null){
+			%>
 		<table class="table">
 			<tr class="text-center">
 				<th colspan="5" class="py-5">즐겨찾기한 디자이너가 없습니다.</th>
 			</tr>
 		</table>
-	<%
-		} else {
-			designerlist = bmdb.getDesignerBm(id);
+		<%
+		}else{
 			for (int i = 0; i < designerlist.size(); i++) {
 				designer=designerlist.get(i);
 				pfcount=pfdb.getPortfolioCount(designer.getId());
@@ -232,19 +229,14 @@
 		<div style="position: relative; overflow: hidden;">
 			<div class="new_list_icon">
 				<%if (bmdb.getBookmarkCheck(id, null, designer.getId()) == 1) {%>
-				<div class="offset-2 col-1" data-toggle="button" aria-pressed="true" id="star<%=i%>">
+				<div class="star" data-toggle="button" aria-pressed="true"  data-designer="<%=designer.getId()%>">
 					<font size="5"><i class="fas fa-star"></i></font>
 				</div>
 				<%} else {%>
-				<div class="offset-2 col-1" data-toggle="button" aria-pressed="false" id="star<%=i%>">
+				<div class="star" data-toggle="button" aria-pressed="false" data-designer="<%=designer.getId()%>">
 					<font size="5"><i class="far fa-star"></i></font>
 				</div>
 				<%}%>
-				<script>
-	                  $("#star<%=i%>").click(function(){
-	                     bmCheck("<%=i%>",null,"<%=designer.getId()%>","<%=id%>");
-					});
-				</script>
 			</div>
 			<div class="wlItem m-2 w3-row media">
 				<div class="w3-col s8 row align-self-center">

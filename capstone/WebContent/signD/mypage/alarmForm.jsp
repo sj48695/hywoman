@@ -97,7 +97,7 @@
 				<td><%=alarm.getType() %></td>
 				<td><%=sdf.format(alarm.getNoticedate())%></td>
 				<td>
-					<button type="button" class="close" name="alarmDelete" onclick="deleteCheck('alarmDelPro.jsp?alarmcode=<%=alarm.getAlarmcode()%>')">
+					<button type="button" class="close" name="alarmDelete" onclick="deleteCheck('alarmDelPro.jsp?list=<%=alarm.getAlarmcode()%>')">
 						<!-- <span aria-hidden="true">&times;</span> -->
 						<img alt="" src="../module/images/Cross.png">
 					</button>

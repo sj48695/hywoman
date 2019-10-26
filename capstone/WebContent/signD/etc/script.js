@@ -103,36 +103,48 @@ function deleteCheck(url){
    }
 }
 //즐겨찾기 추가/삭제
-function bmCheck(i,rqcode,dID,userId){
-	var action = null;
-	if(userId=="null" ||userId==""){
-		alert("권한이 없습니다. 로그인을 해주세요.");
-	}else{
-		if($("#star"+i).attr("aria-pressed")=="true"){//즐겨찾기가 되어있는 경우(찬별-->빈별)
-			$("#star"+i).attr("aria-pressed","false");
-			$("#star"+i).html('<font size="5"><i class="far fa-star"></i></font>');//즐겨찾기 취소상태
-				
-			action="/capstone/signD/mypage/bookMarkDelPro.jsp"
-		}else{//즐겨찾기가 안되어 있는 경우(빈별-->찬별)
-			$("#star"+i).attr("aria-pressed","true");
-			$("#star"+i).html('<font size="5"><i class="fas fa-star"></i></font>');//즐겨찾기 추가상태
-				
-			action="/capstone/signD/mypage/bookMarkInsertPro.jsp"
-		
+$(".star").click(function(){
+	var rqcode = $(this).attr("data-rqcode");
+	var designer = $(this).attr("data-designer");
+	if(rqcode==null) rqcode = 0;
+	if(designer==null) designer = '';
+	var result = -1;
+	var form_data = {
+			requestcode: rqcode,
+			designer_id: designer
+	};
+	$.ajax({
+		type : "POST",
+		url : "/capstone/signD/mypage/bookMarkPro.jsp",
+		data : form_data,
+		success : function(response) {
+			if(response=="null" || response==""){
+				alert("권한이 없습니다. 로그인을 해주세요.");
+			}else{
+				result = response;
+			}
+		},
+		error : function(err) {alert(err);}
+	});
+	
+	if(result){
+		if ($(this).attr("aria-pressed") == "true") {//즐겨찾기가 되어있는 경우(찬별-->빈별)
+				alert("즐겨찾기가 취소되었습니다.");
+				$(this).attr("aria-pressed","false");
+				$(this).html('<font size="5"><i class="far fa-star"></i></font>');//즐겨찾기 취소상태
+		} else {// 즐겨찾기가 안되어 있는 경우(빈별-->찬별)
+				alert("즐겨찾기에 추가되었습니다.");
+				$(this).attr("aria-pressed","true");
+				$(this).html('<font size="5"><i class="fas fa-star"></i></font>');//즐겨찾기 추가상태
 		}
-		var form_data = {
-				requestcode: rqcode,
-				designer_id: dID
-		};
-		$.ajax({
-			type : "POST",
-			url : action,
-			data : form_data,
-			success : function(response) {},
-			error : function() {}
-		});
+	}else{//err
+		if ($(this).attr("aria-pressed") == "true") {
+			alert("즐겨찾기가 취소되지 않았습니다.");
+		}else{
+			alert("즐겨찾기에 추가되지 않았습니다.");
+		}
 	}
-}
+});
 //댓글contentid
 function replyName(i) {
 	$("#reply" + i).attr("name", "reply");

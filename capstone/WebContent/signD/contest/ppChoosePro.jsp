@@ -24,7 +24,7 @@
 		alarm.setTo_id(ppdb.getParticipation(ppcode).getId()); 
 		alarm.setFrom_id(id);
 		alarm.setNoticedate(new Timestamp(System.currentTimeMillis()));
-		alarm.setUrl("/capstone/signD/contest/requestDetail.jsp?requestcode="+rqcode);
+		alarm.setUrl("/capstone/signD/contest/detail.jsp?requestcode="+rqcode);
 		alarm.setContents(id+"님이 당신의 의뢰글을 채택하였습니다.");
 		alarm.setType("참여작 채택");
 		alarmdb.insertAlarm(alarm); 

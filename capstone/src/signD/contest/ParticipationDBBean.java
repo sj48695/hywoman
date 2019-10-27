@@ -665,7 +665,7 @@ public class ParticipationDBBean {
 		 return pps;
     } 
     
-    //하나의 참여작 정보(participationModal.jsp)
+    //하나의 참여작 정보(participation/modal.jsp)
     public ParticipationDataBean getParticipation(int ppcode) 
     		throws Exception {
    	 	Connection conn = null;
@@ -708,7 +708,7 @@ public class ParticipationDBBean {
 		 return pp;
     }
     
- /* //디자이너의 참여작 정보(requestDetail.jsp--> requestParticipation.jsp)
+ /* //디자이너의 참여작 정보(contest/detail.jsp--> requestParticipation.jsp)
     public ParticipationDataBean getParticipation(String id,int rqcode) 
     		throws Exception {
    	 	Connection conn = null;
@@ -750,7 +750,7 @@ public class ParticipationDBBean {
         }
 		 return pp;
     }*/
-    //참여작 조회수 늘리기-->participationModal.jsp
+    //참여작 조회수 늘리기-->participation/modal.jsp
 	public int updateViewcount(int ppcode, String id) throws Exception {
 		Connection conn = null;
 		PreparedStatement pstmt = null;

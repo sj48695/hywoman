@@ -73,11 +73,11 @@
          <h1 class="jumbotron-heading jumbotitle"><strong>랭킹 - 종료된 공모전 보기</strong></h1>
          <p class="lead"><strong>종료된 공모전의 정보를 확인하세요!</strong></p>
          <p>
-            <a href="contestList.jsp" class="btn btn-outline-light btn-lg my-2">진행중</a>
+            <a href="contestIngList.jsp" class="btn btn-outline-light btn-lg my-2">진행중</a>
             <a href="contestEndList.jsp" class="btn  btn-light btn-lg my-2">종료된</a>
          </p>
          <div class="d3 offset-2 col-8">
-            <form class="m-0" name="search" method="get" action="contestList.jsp">
+            <form class="m-0" name="search" method="get" action="contestIngList.jsp">
                <div class="input-group input-group-lgs col-12">
                   <input type="text" class="form-control m-0" aria-label="Sizing input"
                      aria-describedby="inputGroup-sizing-lg" name="keyword" value="<%=keyword%>">
@@ -106,8 +106,8 @@
 				</div>
 				<img class="col-sm-8 p-0 h-100 pointer" style="border: 1px solid #f1f1f1;"
 					src="/capstone/signD/module/images/sample.jpg"
-					onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
-				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+					onclick="location.href='/capstone/signD/contest/designrequest/step/step1.jsp'">
+				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
 					<div class="new_list_sub_top p-0">
 						<div class="new_list_cate inline">
 							Category
@@ -120,7 +120,7 @@
 				</div>
 			</div>
 			<hr class="my-3">
-			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
 				<img src="/capstone/signD/module/images/view.png"/>0&nbsp;&nbsp;
 				<img src="/capstone/signD/module/images/talk.png"/>0
 			</div>
@@ -147,9 +147,9 @@
 				<%}%>
 					
 					alt="<%=rq.getCategory()%>"
-					onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'"
+					onclick="location.href='detail.jsp?requestcode=<%=rq.getRequestcode()%>'"
 					class="col-sm-8 p-0 pointer" style="width:253.33px; height:253.33px; border: 1px solid #f1f1f1;">
-				<div class="col-sm-12 row justify-content-center" onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+				<div class="col-sm-12 row justify-content-center" onclick="location.href='detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
 					<div class="new_list_sub_top p-0">
 						<div class="new_list_cate inline">
 							<%=rq.getCategory()%>
@@ -162,7 +162,7 @@
 				</div>
 			</div>
 			<hr class="my-3">
-			<div class="articleMeta" onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+			<div class="articleMeta" onclick="location.href='detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
 				<img src="/capstone/signD/module/images/view.png" /><%=rq.getViewcount()%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 				<img src="/capstone/signD/module/images/talk.png" /><%=recount%>
 			</div>
@@ -179,8 +179,8 @@
    				</div>
    				<img class="col-sm-8 p-0 h-100 pointer" style=" border: 1px solid #f1f1f1;"
    					src="/capstone/signD/module/images/sample.jpg"
-   					onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
-   				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+   					onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
+   				<div class="col-sm-12 row justify-content-center" onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
    					<div class="new_list_sub_top p-0">
    						<div class="new_list_cate inline">
    							Category
@@ -193,7 +193,7 @@
    				</div>
    			</div>
    			<hr class="my-3">
-   			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+   			<div class="articleMeta py-2" onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
    				<img src="/capstone/signD/module/images/view.png"/>0&nbsp;&nbsp;
    				<img src="/capstone/signD/module/images/talk.png"/>0
    			</div>
@@ -254,7 +254,7 @@
       </div>
       <div class="new_list_item m-2 media row justify-content-between bgcolor<%=i%>">
          <div class="col-sm-8 pr-0 row align-self-center"
-            onclick="location.href='requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+            onclick="location.href='detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
             <div class="new_list_img align-self-center">
               <img <%if (rq.getPpcode() > 0) {//채택한 작품이 있다면
                   filenames = ppdb.getParticipation(rq.getPpcode()).getFile().split(",");%>

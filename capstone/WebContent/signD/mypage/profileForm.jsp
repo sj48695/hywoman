@@ -55,7 +55,7 @@
 	<div class="row">
 		<%if(count==0){%>
 		<div class="container">등록된 포트폴리오가 없습니다.
-			<a class="btn btn-outline-dark" href="../designer/portfolioRegisterForm.jsp">등록하기</a>
+			<a class="btn btn-outline-dark" href="../designer/portfolio/registerForm.jsp">등록하기</a>
 		</div>		
 		<%}else{
 				for (int i = 0; i < pflist.size(); i++) {
@@ -66,14 +66,14 @@
 		<div class="contest-portfolio-item col-md-3">
 			<div class="contest-portfolio-thumb">
 				<div data-toggle="modal" data-target="#portfolio<%=i+1%>">
-					<img src="../../fileSave/portfolioFile/<%if(pf.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>" style="height: 200px">
+					<img src="../../fileSave/participationFile/<%if(pf.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>" style="height: 200px">
 					<div class="contest-portfolio-overlay">
 						<h3><%=pf.getTitle() %></h3>
 						<p class="a"><%=pf.getContents() %></p>
 					</div>
 				</div>
 				<div class="modal fade" id="portfolio<%=i+1%>" tabindex="-1" role="dialog" aria-hidden="true">
-					<jsp:include page="../designer/portfolioModal.jsp">
+					<jsp:include page="../designer/portfolio/modal.jsp">
 						<jsp:param value="<%=pf.getPortfoliocode() %>" name="portfoliocode"/>
 						<jsp:param value="<%=pf.getRequestcode() %>" name="requestcode"/>
 					</jsp:include>
@@ -92,7 +92,7 @@
 		</script>
 		<%
 				}%>
-		<a class="btn btn-outline-dark offset-10" href="../designer/portfolioRegisterForm.jsp">등록하기</a>
+		<a class="btn btn-outline-dark offset-10" href="../designer/portfolio/registerForm.jsp">등록하기</a>
 		<%
 			}
 		%>

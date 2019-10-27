@@ -63,9 +63,9 @@ $(window).scroll(function() {
 			<li>
 			<%
 				if(id != null) {
-			%>  <a href="/capstone/signD/contest/designRequest1.jsp">디자인 의뢰</a>
+			%>  <a href="/capstone/signD/contest/designRequest/step1.jsp">디자인 의뢰</a>
 				<ul>
-					<li><a href="/capstone/signD/contest/designRequest1.jsp">공모전 개최하기</a></li>
+					<li><a href="/capstone/signD/contest/designRequest/step1.jsp">공모전 개최하기</a></li>
 				</ul>
 			<%	
 				}else{
@@ -77,9 +77,9 @@ $(window).scroll(function() {
 				}
 			%>
 			</li>
-			<li><a href="/capstone/signD/contest/contestList.jsp">공모전 리스트</a>
+			<li><a href="/capstone/signD/contest/contestIngList.jsp">공모전 리스트</a>
 				<ul>
-					<li><a href="/capstone/signD/contest/contestList.jsp">진행중인 공모전</a></li>
+					<li><a href="/capstone/signD/contest/contestIngList.jsp">진행중인 공모전</a></li>
 					<li><a href="/capstone/signD/contest/contestEndList.jsp">종료된 공모전</a></li>
 				</ul>
 			</li>

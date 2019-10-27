@@ -189,10 +189,10 @@
 							rq=rqdb.getRequest(pf.getRequestcode());
 					%>
 					<div class="w3-col s4" data-toggle="modal" data-target="#portfolio<%=i + 1%><%=j%>" onclick="viewCount(0,<%=pf.getPortfoliocode()%>)">
-						<img class="wlrWinImgs" src="../../fileSave/portfolioFile/<%if (pf.getRequestcode() != 0) {%><%=rq.getCategory()%>/<%}%><%=filenames[filenames.length - 1]%>">
+						<img class="wlrWinImgs" src="../../fileSave/participationFile/<%if (pf.getRequestcode() != 0) {%><%=rq.getCategory()%>/<%}%><%=filenames[filenames.length - 1]%>">
 					</div>
 					<div class="modal fade" id="portfolio<%=i + 1%><%=j%>" tabindex="-1" role="dialog" aria-hidden="true">
-						<jsp:include page="portfolioModal.jsp">
+						<jsp:include page="portfolio/modal.jsp">
 							<jsp:param value="<%=pf.getPortfoliocode()%>" name="portfoliocode" />
 							<jsp:param value="<%=pf.getRequestcode()%>" name="requestcode" />
 						</jsp:include>

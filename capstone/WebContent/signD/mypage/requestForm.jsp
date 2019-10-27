@@ -82,14 +82,14 @@
 	%>
 		<table class="table table-borderless py-5 my-5">
 			<tr><th class="text-center">진행중인 콘테스트가 없습니다. 콘테스트를 개최해 주세요.</th></tr>
-			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/designRequest1.jsp">개최하기</a></td></tr>
+			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/designrequest/step1.jsp">개최하기</a></td></tr>
 		</table>
 		<%
 			} else if (member.getType().equals("디자이너")) {
 		%>
 		<table class="table table-borderless py-5 my-5">
 			<tr><th class="text-center">진행중인 콘테스트가 없습니다. 콘테스트에 참여해 보세요.</th></tr>
-			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/contestList.jsp">참여하기</a></td></tr>
+			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/contestIngList.jsp">참여하기</a></td></tr>
 		</table>
 		<%
 			}
@@ -114,7 +114,7 @@
 	      </div>
 	      <div class="new_list_item m-2 media row justify-content-between bgcolor0<%=i%>">
 	         <div class="col-sm-8 pr-0 row align-self-center"
-	            onclick="location.href='/capstone/signD/contest/requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+	            onclick="location.href='/capstone/signD/contest/detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
 	            <div class="new_list_img align-self-center">
 	               <img src="/capstone/signD/module/images/<%=rq.getCategory()%>.jpg"
 	                  alt="<%=rq.getCategory()%>">
@@ -204,14 +204,14 @@
 	%>
 		<table class="table table-borderless py-5 my-5">
 			<tr><th class="text-center">마감된 콘테스트가 없습니다. 콘테스트를 개최해 주세요.</th></tr>
-			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/designRequest1.jsp">개최하기</a></td></tr>
+			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/designrequest/step1.jsp">개최하기</a></td></tr>
 		</table>
 		<%
 				} else if (member.getType().equals("디자이너")) {
 			%>
 		<table class="table table-borderless py-5 my-5">
 			<tr><th class="text-center">마감된 콘테스트가 없습니다. 콘테스트에 참여해 보세요.</th></tr>
-			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/contestList.jsp">참여하기</a></td></tr>
+			<tr><td class="text-center"><a class="btn btn-outline-dark" href="../contest/contestIngList.jsp">참여하기</a></td></tr>
 		</table>
 		<%
 				}
@@ -236,7 +236,7 @@
 	      </div>
 	      <div class="new_list_item m-2 media row justify-content-between bgcolor1<%=i%>">
 	         <div class="col-sm-8 pr-0 row align-self-center"
-	            onclick="location.href='/capstone/signD/contest/requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+	            onclick="location.href='/capstone/signD/contest/detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
 	            <div class="new_list_img align-self-center">
 	              <img <%if (rq.getPpcode() > 0) {//채택한 작품이 있다면
 	                  filenames = ppdb.getParticipation(rq.getPpcode()).getFile().split(",");%>

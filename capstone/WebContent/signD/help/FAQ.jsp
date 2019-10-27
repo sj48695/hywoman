@@ -53,10 +53,10 @@
 </div>
 <div class="container">
    <div class="w3-bar w3-border w3-light-white w3-center">
-      <a href="notice.jsp" class="w3-button w3-col s3">공지사항</a> 
-      <a href="FAQ.jsp" class="w3-button w3-col s3 w3-brown"><strong>FAQ</strong></a> 
-      <a href="Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
-      <a href="rule.jsp" class="w3-button w3-col s3 ">이용방법</a>
+      <a href="/capstone/signD/help/notice.jsp" class="w3-button w3-col s3">공지사항</a> 
+      <a href="/capstone/signD/help/FAQ.jsp" class="w3-button w3-col s3 w3-brown"><strong>FAQ</strong></a> 
+      <a href="/capstone/signD/help/Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
+      <a href="/capstone/signD/help/rule.jsp" class="w3-button w3-col s3 ">이용방법</a>
    </div>
    <div class="search-wrap" style="width: 1110px; height: 100px; border: 5px solid #DEDEDE;">
       <dl style="margin-left: 20px; margin-top: 18px;">
@@ -136,9 +136,9 @@
 					if (managerId != null) {
 				%>
 				<td>
-					<a class="btn btn-outline-dark" href="../manager/FAQUpdateForm.jsp?faqcode=<%=FAQ.getFAQcode() %>" role="button">
+					<a class="btn btn-outline-dark" href="../manager/FAQ/updateForm.jsp?faqcode=<%=FAQ.getFAQcode() %>" role="button">
 					수정</a>
-					<a class="btn btn-outline-dark" href="../manager/FAQDelPro.jsp?faqcode=<%=FAQ.getFAQcode() %>" role="button">
+					<a class="btn btn-outline-dark" href="../manager/FAQ/delPro.jsp?faqcode=<%=FAQ.getFAQcode() %>" role="button">
 					삭제</a>
 				</td>
 				<%
@@ -155,7 +155,7 @@
    <%
    	if (managerId != null) {
    %>
-   <a class="btn btn-outline-dark offset-10" href="../manager/FAQWriteForm.jsp" role="button"><i class="far fa-edit"></i>글쓰기</a>
+   <a class="btn btn-outline-dark offset-10" href="../manager/FAQ/writeForm.jsp" role="button"><i class="far fa-edit"></i>글쓰기</a>
    <%
       }
    %>

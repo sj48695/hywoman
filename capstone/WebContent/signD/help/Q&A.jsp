@@ -49,13 +49,13 @@
 </div>
 <div class="container">
    <div class="w3-border w3-light-white w3-row">
-      <a href="notice.jsp" class="w3-button w3-col s3">공지사항</a> 
-      <a href="FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
-      <a href="Q&A.jsp" class="w3-button w3-col s3 w3-brown"><strong>Q&A</strong></a> 
-      <a href="rule.jsp" class="w3-button w3-col s3">이용방법</a>
+      <a href="/capstone/signD/help/notice.jsp" class="w3-button w3-col s3">공지사항</a> 
+      <a href="/capstone/signD/help/FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
+      <a href="/capstone/signD/help/Q&A.jsp" class="w3-button w3-col s3 w3-brown"><strong>Q&A</strong></a> 
+      <a href="/capstone/signD/help/rule.jsp" class="w3-button w3-col s3">이용방법</a>
    </div>
 <!-- <div style="text-align:center;"> -->
-   <form class="form-inline py-4" style="margin:0 auto;" name="search" method="get" action="Q&A.jsp">
+   <form class="form-inline py-4" style="margin:0 auto;" name="search" method="get" action="/capstone/signD/help/Q&A.jsp">
       <select name="keyfield" class="col-md-1" id="keyfield">
            <option value="all">전체</option>
            <option value="title">제목</option>
@@ -104,7 +104,7 @@
          <%  }else{%>
             <td style="text-indent:<%=wid%>px;">
          <%  }%>
-               <a href="Q&ADetail.jsp?qnacode=<%=qna.getQnAcode()%>"><%=qna.getTitle()%></a>
+               <a href="Q&A/detail.jsp?qnacode=<%=qna.getQnAcode()%>"><%=qna.getTitle()%></a>
             </td>
             <td><%=qna.getId()%></td>
             <td><%=sdf.format(qna.getReg_date())%></td>
@@ -118,7 +118,7 @@
    <%
    if(managerId==null){
    %>
-   <a class="btn btn-outline-dark offset-10" role="button" href="Q&AWriteForm.jsp"><i class="far fa-edit"></i>글쓰기</a>
+   <a class="btn btn-outline-dark offset-10" role="button" href="Q&A/writeForm.jsp"><i class="far fa-edit"></i>글쓰기</a>
    <%} %>
    <nav aria-label="Page navigation">
       <div class="w3-bar w3-large pagination justify-content-center py-3">
@@ -137,17 +137,17 @@
                if (endPage > pageCount)
                   endPage = pageCount;//2
          %>
-         <a href="Q&A.jsp?pageNum=<%=startPage - 10%>"
+         <a href="/capstone/signD/help/Q&A.jsp?pageNum=<%=startPage - 10%>"
             class="w3-button w3-hover-black<%if (startPage > 10) {} else {%> disabled<%}%>"><<</a>
          <%
                for (int i = startPage; i <= endPage; i++) {
          %>
-         <a href="Q&A.jsp?pageNum=<%=i%>"
+         <a href="/capstone/signD/help/Q&A.jsp?pageNum=<%=i%>"
             class="w3-button <%if (currentPage == i) {%>w3-black<%} else {%>w3-hover-black<%}%>"><%=i%></a>
          <%
                }
          %>
-         <a href="Q&A.jsp?pageNum=<%=startPage + 10%>"
+         <a href="/capstone/signD/help/Q&A.jsp?pageNum=<%=startPage + 10%>"
             class="w3-button w3-hover-black<%if (endPage < pageCount) {} else {%> disabled<%}%>">>></a>
          <%
             }

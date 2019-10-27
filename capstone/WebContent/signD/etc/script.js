@@ -115,7 +115,7 @@ $(".star").click(function(){
 	};
 	$.ajax({
 		type : "POST",
-		url : "/capstone/signD/mypage/bookMarkPro.jsp",
+		url : "/capstone/signD/mypage/bookmark/bookMarkPro.jsp",
 		data : form_data,
 		success : function(response) {
 			if(response=="null" || response==""){
@@ -199,7 +199,7 @@ $("#pwCheck").focusout(function(){
 	}
 });
 
-//파일추가/삭제(participationForm.jsp)
+//파일추가/삭제(participation/registerForm.jsp)
 
 var sel_files=[];
 $(document).ready(function(){
@@ -236,7 +236,7 @@ $(document).ready(function(){
 	 $("#file").on("change",handleImgsFilesSelect);
 })
 
-//participationForm.jsp 이미지파일 미리보기
+//participation/registerForm.jsp 이미지파일 미리보기
 function handleImgsFilesSelect(e){
 	var files=e.target.files;
 	var filesArr=Array.prototype.slice.call(files);
@@ -530,7 +530,7 @@ function submitOnEnter(e) {
     }
 }
 
-//designRequest2.jsp 기타 선택시
+//designrequest/step2.jsp 기타 선택시
 function otherChange(input_name,input_id){
 	if(input_name=="job_kind"){
 		if(document.getElementById("ot").checked){
@@ -560,7 +560,7 @@ function otherChange(input_name,input_id){
 	}
 }
 
-//designRequest3.jsp 상금 입력시
+//designrequest/step3.jsp 상금 입력시
 function costChange(cost,default_cost){
 	console.log($("#cost").val());
 	if($("#cost").val() < cost){//상금최소금액보다 작으면
@@ -607,7 +607,7 @@ function selecteddelivery(btn,i,ppcode,prize_money){
 		}
 }
 
-//myPage.jsp-->OTORequestForm.jsp 수락/거절
+//myPage.jsp-->OTORequest/registerForm.jsp 수락/거절
 function accept(rqcode,accept){
 	var form_data={
 			rqcode:rqcode,
@@ -616,7 +616,7 @@ function accept(rqcode,accept){
 	if(accept==1 && confirm("수락하시겠습니까?")){
 		$.ajax({
 			method:"POST",
-			url:"/capstone/signD/mypage/OTOAcceptPro.jsp",
+			url:"/capstone/signD/mypage/onetoone/acceptPro.jsp",
 			data:form_data,
 			success:function(response){
 				if(response==1){
@@ -633,7 +633,7 @@ function accept(rqcode,accept){
 	}else if(accept==2 && confirm("거절하시겠습니까?")){
 		$.ajax({
 			method:"POST",
-			url:"/capstone/signD/mypage/OTOAcceptPro.jsp",
+			url:"/capstone/signD/mypage/onetoone/acceptPro.jsp",
 			data:form_data,
 			success:function(response){
 				if(response==1){

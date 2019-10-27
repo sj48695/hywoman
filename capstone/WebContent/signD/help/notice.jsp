@@ -45,10 +45,10 @@
 </div>
 <div class="container">
    <div class="w3-border w3-light-white w3-row">
-      <a href="notice.jsp" class="w3-button w3-col s3 w3-brown"><strong>공지사항</strong></a> 
-      <a href="FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
-      <a href="Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
-      <a href="rule.jsp" class="w3-button w3-col s3">이용방법</a>
+      <a href="/capstone/signD/help/notice.jsp" class="w3-button w3-col s3 w3-brown"><strong>공지사항</strong></a> 
+      <a href="/capstone/signD/help/FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
+      <a href="/capstone/signD/help/Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
+      <a href="/capstone/signD/help/rule.jsp" class="w3-button w3-col s3">이용방법</a>
    </div>
 	<div class="accordion py-4" id="accordion">
 		<table class="table table-hover">
@@ -93,9 +93,9 @@
 					<%if (managerId != null) {%>
 					<td class="text-center">
 						<a class="btn btn-outline-dark" role="button"
-						href="../manager/noticeUpdateForm.jsp?noticecode=<%=notice.getNoticecode()%>">수정</a>
+						href="../manager/notice/updateForm.jsp?noticecode=<%=notice.getNoticecode()%>">수정</a>
 						<a class="btn btn-outline-dark" role="button"
-						href="../manager/noticeDelPro.jsp?noticecode=<%=notice.getNoticecode()%>"> 삭제</a>
+						href="../manager/notice/delPro.jsp?noticecode=<%=notice.getNoticecode()%>"> 삭제</a>
 					</td>
 					<%}%>
 				</tr>
@@ -109,7 +109,7 @@
 		<%
 			if (managerId != null) {
 		%>
-	<a class="btn btn-outline-dark offset-10" href="../manager/noticeWriteForm.jsp" role="button"><i class="far fa-edit"></i>글쓰기</a>
+	<a class="btn btn-outline-dark offset-10" href="../manager/notice/writeForm.jsp" role="button"><i class="far fa-edit"></i>글쓰기</a>
 		<%
 			}
 		%>

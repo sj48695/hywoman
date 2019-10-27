@@ -151,7 +151,7 @@
 					</div>
 				</div>
 				<div class="modal fade" id="participationDetail<%=i+1%>" tabindex="-1" role="dialog" aria-hidden="true">
-					<jsp:include page="../designer/participationModal.jsp">
+					<jsp:include page="../designer/participation/modal.jsp">
 						<jsp:param value="<%=pp.getPpcode() %>" name="participationcode"/>
 						<jsp:param value="<%=pp.getRequestcode() %>" name="requestcode"/>
 						<jsp:param value="<%=rq.getId() %>" name="requesterId"/>

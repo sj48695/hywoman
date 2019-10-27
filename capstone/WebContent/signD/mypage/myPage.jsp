@@ -121,18 +121,18 @@
 			}
 		%>
 		<div class="tab-pane fade" id="alarm" role="tabpanel" aria-labelledby="alarm-tab">
-			<jsp:include page="alarmForm.jsp" />
+			<jsp:include page="alarm/index.jsp" />
 		</div>
 		<div class="tab-pane fade" id="messages" role="tabpanel" aria-labelledby="messages-tab">
-			<jsp:include page="messageForm.jsp">
+			<jsp:include page="message/index.jsp">
 				<jsp:param value="<%=pageNum %>" name="pageNum"/>
 			</jsp:include>
 		</div>
 		<div class="tab-pane fade" id="bookmark" role="tabpanel" aria-labelledby="bookmark-tab">
-			<jsp:include page="bookMarkForm.jsp" />
+			<jsp:include page="bookmark/index.jsp" />
 		</div>
 		<div class="tab-pane fade" id="OTOrequest" role="tabpanel" aria-labelledby="OTOrequest-tab">
-			<jsp:include page="OTORequestForm.jsp" />
+			<jsp:include page="onetoone/requestForm.jsp" />
 		</div>
 		<div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab">
 			<jsp:include page="../member/updateMemberForm.jsp" />

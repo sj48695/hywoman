@@ -37,10 +37,10 @@
 </div>
 <div class="container">
    <div class="w3-border w3-light-white w3-row">
-      <a href="notice.jsp" class="w3-button w3-col s3">공지사항</a> 
-      <a href="FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
-      <a href="Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
-      <a href="rule.jsp" class="w3-button w3-col s3 w3-brown"><strong>이용방법</strong></a>
+      <a href="/capstone/signD/help/notice.jsp" class="w3-button w3-col s3">공지사항</a> 
+      <a href="/capstone/signD/help/FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
+      <a href="/capstone/signD/help/Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
+      <a href="/capstone/signD/help/rule.jsp" class="w3-button w3-col s3 w3-brown"><strong>이용방법</strong></a>
    </div>
    <div class="pf_nav_wrap w3-center">
 	   <ul class="pf_nav">
@@ -101,7 +101,7 @@
 			<h1 class="w3-center w3-text-grey"><b>지금 바로 의뢰해 보세요!</b></h1>
 			<p class="w3-large">누구든 의뢰 하실 수 있습니다.</p>
 			<p class="w3-xlarge">
-				<button onclick="location.href='../contest/designRequest1.jsp'" style="padding: 8px 60px"
+				<button onclick="location.href='../contest/designrequest/step1.jsp'" style="padding: 8px 60px"
 					class="btn btnOr">Try!</button>
 			</p>
 		</div>

@@ -13,7 +13,7 @@
 						<li class="ft_li">
 							<a 
 							<%if (id != null) {%>
-								href="/capstone/signD/contest/designRequest1.jsp"
+								href="/capstone/signD/contest/designrequest/step1.jsp"
 							<%} else {%> 
 								data-toggle="modal" href="#" data-target="#member" 
 							<%}%>>공모전 개최하기 </a>
@@ -23,7 +23,7 @@
 				<div class="ft_page_rows">
 					<div class="ft_page_sub ft_inline">공모전리스트</div>
 					<ul class="ft_inline ft_ul">
-						<li class="ft_li"><a href="/capstone/signD/contest/contestList.jsp">진행중인 공모전</a></li>
+						<li class="ft_li"><a href="/capstone/signD/contest/contestIngList.jsp">진행중인 공모전</a></li>
 						<li class="ft_li"><a href="/capstone/signD/contest/contestEndList.jsp">종료된 공모전</a></li>
 					</ul>
 				</div>

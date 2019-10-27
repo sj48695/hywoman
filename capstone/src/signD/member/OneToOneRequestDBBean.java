@@ -446,7 +446,7 @@ public class OneToOneRequestDBBean {
 		return rqs;
 	}
 
-	 //의뢰글 정보를 표시-->requestDetail.jsp
+	 //의뢰글 정보를 표시-->contest/detail.jsp
 	public OneToOneRequestDataBean getOneToOneRequest(int rqcode) 
 			throws Exception {
 		 	Connection conn = null;

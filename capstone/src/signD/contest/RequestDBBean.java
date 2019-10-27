@@ -753,7 +753,7 @@ public class RequestDBBean {
 		return rqs;
 	}
 	
-	//contestList.jsp/contestEndList.jsp 조회순top3
+	//contestIngList.jsp/contestEndList.jsp 조회순top3
 	public List<RequestDataBean> contestListTop3(String current) 
 			throws Exception {
 		Connection conn = null;
@@ -883,7 +883,7 @@ public class RequestDBBean {
 		 return rqs;
 	}
 
-	 //의뢰글 정보를 표시-->requestDetail.jsp
+	 //의뢰글 정보를 표시-->contest/detail.jsp
 	public RequestDataBean getRequest(int rqcode) 
 			throws Exception {
 		 	Connection conn = null;
@@ -938,7 +938,7 @@ public class RequestDBBean {
 		 return rq;
 	}
 	
-	 //의뢰글 조회수 늘리기-->requestDetail.jsp
+	 //의뢰글 조회수 늘리기-->contest/detail.jsp
 	public void updateViewcount(int rqcode,String id) 
 			throws Exception {
 		 	Connection conn = null;

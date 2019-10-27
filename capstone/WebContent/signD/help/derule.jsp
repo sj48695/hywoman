@@ -35,10 +35,10 @@
 </div>
 <div class="container">
    <div class="w3-border w3-light-white w3-row">
-      <a href="notice.jsp" class="w3-button w3-col s3">공지사항</a> 
-      <a href="FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
-      <a href="Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
-      <a href="rule.jsp" class="w3-button w3-col s3 w3-brown"><strong>이용방법</strong></a>
+      <a href="/capstone/signD/help/notice.jsp" class="w3-button w3-col s3">공지사항</a> 
+      <a href="/capstone/signD/help/FAQ.jsp" class="w3-button w3-col s3">FAQ</a> 
+      <a href="/capstone/signD/help/Q&A.jsp" class="w3-button w3-col s3">Q&A</a> 
+      <a href="/capstone/signD/help/rule.jsp" class="w3-button w3-col s3 w3-brown"><strong>이용방법</strong></a>
    </div>
    <div class="pf_nav_wrap w3-center">
       <ul class="pf_nav">
@@ -128,7 +128,7 @@
       </b>
    </h3>
    <p class="w3-xlarge"><br>
-      <button onclick="location.href='../contest/contestList.jsp'" style="padding: 8px 60px"
+      <button onclick="location.href='../contest/contestIngList.jsp'" style="padding: 8px 60px"
          class="w3-button w3-round w3-brown w3-opacity w3-hover-opacity-off">콘테스트 보러가기</button>
    </p>
 </div>

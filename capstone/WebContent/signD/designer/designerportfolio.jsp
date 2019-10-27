@@ -175,7 +175,7 @@
 		<div class="contest-portfolio-item col-md-3">
 			<div class="contest-portfolio-thumb">
 				<div data-toggle="modal" data-target="#portfolio<%=i+1%>" onclick="viewCount(0,<%=pf.getPortfoliocode() %>)">
-					<img src="../../fileSave/portfolioFile/<%if(pf.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>" style="height: 200px" >
+					<img src="../../fileSave/participationFile/<%if(pf.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>" style="height: 200px" >
 					<div class="contest-portfolio-overlay">
 						<h3><%=pf.getTitle() %></h3>
 						<p class="a ellipsis5"><%=pf.getContents() %></p>
@@ -184,7 +184,7 @@
 					</div>
 				</div>
 				<div class="modal fade" id="portfolio<%=i+1%>" tabindex="-1" role="dialog" aria-hidden="true">
-					<jsp:include page="../designer/portfolioModal.jsp">
+					<jsp:include page="../designer/portfolio/modal.jsp">
 						<jsp:param value="<%=pf.getPortfoliocode() %>" name="portfoliocode"/>
 						<jsp:param value="<%=pf.getRequestcode() %>" name="requestcode"/>
 					</jsp:include>

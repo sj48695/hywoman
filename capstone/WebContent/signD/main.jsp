@@ -124,7 +124,7 @@
             for (int i = 0; i < rqlist.size(); i++) {
                rq = rqlist.get(i);
       %>
-      <div class="col-md-3 pointer" onclick="location.href='/capstone/signD/contest/requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+      <div class="col-md-3 pointer" onclick="location.href='/capstone/signD/contest/detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
          <div class="card mb-4 shadow-sm">
             <div class="card_effect">
                <img class="card-img-top" src="/capstone/signD/module/images/<%=rq.getCategory() %>.jpg" alt="Card image cap">
@@ -139,7 +139,7 @@
             }
             for(int i = 0; i < 4-rqlist.size(); i++){
       %>
-      <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+      <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
          <div class="card mb-4 shadow-sm">
             <div class="card_effect">
                <img class="card-img-top" src="/capstone/signD/module/images/+.png" alt="Card image cap">
@@ -154,7 +154,7 @@
          } else {
             for (int i = 0; i < 4; i++) {
       %>
-      <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designRequest1.jsp'">
+      <div class="col-md-3 pointer"  onclick="location.href='/capstone/signD/contest/designrequest/step1.jsp'">
          <div class="card mb-4 shadow-sm">
             <div class="card_effect">
                <img class="card-img-top" src="/capstone/signD/module/images/sample.jpg" alt="Card image cap">
@@ -190,7 +190,7 @@
                      dday = rqdb.getDday(rq.getRequestcode());
             %>
             <div class="contest_item w3-row" 
-               onclick="location.href='contest/requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+               onclick="location.href='contest/detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
                <img src="module/images/angle-right.png" class="w3-col s1"
                   style="width: 15px; height: 15px; margin: 17px; margin-right: 10px;">
                <div class="contest_item_content w3-col s5 text-left" style="font-weight: bold;"><%=rq.getTitle()%></div>
@@ -203,7 +203,7 @@
                   for (int i = 0; i < 5 - rqlist.size(); i++) {
             %>
             <div class="contest_item w3-row justify-content-center" 
-               onclick="location.href='contest/designRequest1.jsp'">
+               onclick="location.href='contest/designrequest/step1.jsp'">
                <img src="module/images/+2.png" style="width: 15px; height: 15px">
             </div>
             <%
@@ -212,7 +212,7 @@
                   for (int i = 0; i < 5 ; i++) {
             %>
             <div class="contest_item w3-row justify-content-center" 
-               onclick="location.href='contest/designRequest1.jsp'">
+               onclick="location.href='contest/designrequest/step1.jsp'">
                <img src="module/images/+2.png" style="width: 15px; height: 15px">
             </div>
             <%
@@ -233,7 +233,7 @@
                      dday = rqdb.getDday(rq.getRequestcode());
             %>
             <div class="contest_item w3-row"
-               onclick="location.href='contest/requestDetail.jsp?requestcode=<%=rq.getRequestcode()%>'">
+               onclick="location.href='contest/detail.jsp?requestcode=<%=rq.getRequestcode()%>'">
                <img src="module/images/angle-right.png" class="w3-col s1"
                   style="width: 15px; height: 15px; margin: 17px; margin-right: 10px;">
                <div class="contest_item_content w3-col s5 text-left" style="font-weight: bold;"><%=rq.getTitle()%></div>
@@ -246,7 +246,7 @@
                   for (int i = 0; i < 5 - rqlist.size(); i++) {
             %>
             <div class="contest_item w3-row justify-content-center" 
-               onclick="location.href='contest/designRequest1.jsp'">
+               onclick="location.href='contest/designrequest/step1.jsp'">
                <img src="module/images/+2.png" style="width: 15px; height: 15px">
             </div>
             <%
@@ -255,7 +255,7 @@
                   for (int i = 0; i < 5 ; i++) {
             %>
             <div class="contest_item w3-row justify-content-center" 
-               onclick="location.href='contest/designRequest1.jsp'">
+               onclick="location.href='contest/designrequest/step1.jsp'">
                <img src="module/images/+2.png" style="width: 15px; height: 15px">
             </div>
             <%
@@ -306,7 +306,7 @@
 			<div class="mb-4 shadow-sm">
 				<div class="mainmenu-thumb" data-toggle="modal" data-target="#portfolio<%=i+1%>" onclick="viewCount(0,<%=portfolio.getPortfoliocode() %>)">
 					<img class="img-responsive" style="height:255px"
-						  src="../fileSave/portfolioFile/<%if(portfolio.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>">
+						  src="../fileSave/participationFile/<%if(portfolio.getRequestcode()!=0){%><%=rq.getCategory() %>/<%} %><%=filenames[filenames.length-1]%>">
 				   <div class="mainmenu-overlay">
 	                  <div class="mainmenu-item">
 	                     <h5><%=portfolio.getTitle() %></h5>
@@ -315,7 +315,7 @@
 	               </div>
 				</div>
 				<div class="modal fade" id="portfolio<%=i+1%>" tabindex="-1" role="dialog" aria-hidden="true">
-					<jsp:include page="designer/portfolioModal.jsp">
+					<jsp:include page="designer/portfolio/modal.jsp">
 						<jsp:param value="<%=portfolio.getPortfoliocode() %>" name="portfoliocode"/>
 						<jsp:param value="<%=portfolio.getRequestcode() %>" name="requestcode"/>
 					</jsp:include>
